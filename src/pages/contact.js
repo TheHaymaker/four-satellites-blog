@@ -1,12 +1,10 @@
 /* eslint jsx-a11y/label-has-for:0 */
-
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
-import { Layout, Wrapper, Header, Button } from '../components'
-
-import config from '../../config'
+import { Link } from 'gatsby';
+import React from 'react';
+import Helmet from 'react-helmet';
+import styled from 'styled-components';
+import config from '../../config';
+import { Button, Header, Layout, Wrapper } from '../components';
 
 const Content = styled.div`
   grid-column: 2;
@@ -40,19 +38,30 @@ const Content = styled.div`
       }
     }
   }
-`
+`;
 
 const Contact = () => (
   <Layout>
     <Wrapper>
       <Helmet title={`Contact | ${config.siteTitle}`} />
       <Header>
-        <Link to="/">{config.siteTitle}</Link>
+        <button type="submit" onClick={e => window.handlePageTransition(e)}>
+          Trigger
+        </button>
+        <Link to="/" timeout={200} onClick={e => window.handlePageTransition(e)}>
+          {config.siteTitle}
+        </Link>
       </Header>
       <Content>
         <h1>Contact</h1>
         <p>Super cool intro text to get people contacting me! It uses Netlify's form feature.</p>
-        <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
+        <form
+          name="contact-form"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          action="/success"
+        >
           <p>
             <label htmlFor="contact-name">
               Name
@@ -77,6 +86,6 @@ const Contact = () => (
       </Content>
     </Wrapper>
   </Layout>
-)
+);
 
-export default Contact
+export default Contact;

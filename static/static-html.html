@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charSet="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title data-react-helmet="true"></title>
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="shortcut icon" href="/icons/icon-48x48.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#3498DB" />
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <canvas id="four-satellites"></canvas>
+        <canvas id="four-satellites-4"></canvas>
+        <canvas id="four-satellites-1"></canvas>
+        <canvas id="four-satellites-2"></canvas>
+        <canvas id="four-satellites-3"></canvas>
+      </div>
+      <button class="trigger-overlay">Transition the page</button>
+    </nav>
+    <noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript>
+    <div id="___gatsby"></div>
+    <script src="/commons.js"></script>
+    <canvas id="overlayAnimation"></canvas>
+    <script src="sprite-animation.js"></script>
+    <script>
+      let transitionBtn = document.querySelector('.trigger-overlay');
+
+      transitionBtn.addEventListener('click', async e => {
+        e.target.style.pointerEvents = 'none';
+        frames = 0;
+        frameIndex = 0;
+        tickCount = 0;
+        overlay = sprite({
+          context: canvas.getContext('2d'),
+          width: 13200,
+          height: 600,
+          image: overlayImage,
+          numberOfFrames: 22,
+          ticksPerFrame: 3,
+          length: 0
+        });
+        await overlayTakeOver();
+
+        setTimeout(() => {
+          e.target.style.pointerEvents = 'all';
+        }, 1500);
+      });
+    </script>
+    <script>
+      window.handlePageTransition = e => {
+        frames = 0;
+        frameIndex = 0;
+        tickCount = 0;
+        overlay = sprite({
+          context: canvas.getContext('2d'),
+          width: 13200,
+          height: 600,
+          image: overlayImage,
+          numberOfFrames: 22,
+          ticksPerFrame: 3,
+          length: 0
+        });
+        overlayTakeOver();
+      };
+    </script>
+    <script src="logo-animation.js"></script>
+    <script src="logo-animation.1.js"></script>
+    <script src="logo-animation.2.js"></script>
+    <script src="logo-animation.3.js"></script>
+    <script src="logo-animation.4.js"></script>
+  </body>
+</html>

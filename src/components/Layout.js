@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
-
-import SEO from './SEO'
-import theme from '../../config/theme'
+import { graphql, StaticQuery } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import theme from '../../config/theme';
+import SEO from './SEO';
+import Transition from './Transition';
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -184,7 +184,7 @@ const GlobalStyle = createGlobalStyle`
   [hidden] {
     display: none !important;
   }
-`
+`;
 
 const Footer = styled.footer`
   text-align: center;
@@ -192,9 +192,9 @@ const Footer = styled.footer`
   span {
     font-size: 0.75rem;
   }
-`
+`;
 
-const Layout = ({ children, customSEO }) => (
+const Layout = ({ location, children, customSEO }) => (
   <StaticQuery
     query={graphql`
       query LayoutQuery {
@@ -208,25 +208,28 @@ const Layout = ({ children, customSEO }) => (
         <React.Fragment>
           {!customSEO && <SEO buildTime={data.site.buildTime} />}
           <GlobalStyle />
-          {children}
+          <Transition location={location}>{children}</Transition>
           <Footer>
             &copy; 2019 by John Doe. All rights reserved. <br />
-            <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
+            <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a>
+            <br />
             <span>Last build: {data.site.buildTime}</span>
           </Footer>
         </React.Fragment>
       </ThemeProvider>
     )}
   />
-)
+);
 
-export default Layout
+export default Layout;
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
   customSEO: PropTypes.bool,
-}
+  location: PropTypes.object
+};
 
 Layout.defaultProps = {
   customSEO: false,
-}
+  location: {}
+};

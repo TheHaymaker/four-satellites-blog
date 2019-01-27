@@ -1,22 +1,28 @@
-const config = require('./config')
+const config = require('./config');
 
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
 
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
-    siteUrl: config.siteUrl + pathPrefix,
+    siteUrl: config.siteUrl + pathPrefix
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sharp',
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout.js`)
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'post',
-        path: `${__dirname}/blog`,
-      },
+        path: `${__dirname}/blog`
+      }
     },
     {
       resolve: 'gatsby-mdx',
@@ -26,8 +32,8 @@ module.exports = {
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',
-              rel: 'nofollow noopener noreferrer',
-            },
+              rel: 'nofollow noopener noreferrer'
+            }
           },
           {
             resolve: 'gatsby-remark-images',
@@ -35,18 +41,18 @@ module.exports = {
               maxWidth: 830,
               quality: 90,
               withWebp: true,
-              linkImagesToOriginal: false,
-            },
+              linkImagesToOriginal: false
+            }
           },
           // TODO: Replace with "mdx-component-autolink-headers"
           {
             resolve: 'gatsby-remark-autolink-headers',
             options: {
-              maintainCase: false,
-            },
-          },
-        ],
-      },
+              maintainCase: false
+            }
+          }
+        ]
+      }
     },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
@@ -61,10 +67,10 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'standalone',
-        icon: config.favicon,
-      },
+        icon: config.favicon
+      }
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-netlify',
-  ],
-}
+    'gatsby-plugin-netlify'
+  ]
+};
