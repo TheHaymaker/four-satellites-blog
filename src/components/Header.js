@@ -112,7 +112,7 @@ const handlePageTransition = async e => {
     that.render = function() {
       // Clear the canvas
       that.context.clearRect(0, 0, that.width, that.height);
-      
+
       // Draw the animation
       that.context.drawImage(
         that.image,
@@ -139,7 +139,8 @@ const handlePageTransition = async e => {
   const overlayImage = new Image();
   // Create sprite
   overlayImage.src = './screen-transition-noise-2.png';
- 
+
+  overlayImage.onload = () => {
     frames = 0;
     frameIndex = 0;
     tickCount = 0;
@@ -151,15 +152,9 @@ const handlePageTransition = async e => {
       numberOfFrames: 22,
       ticksPerFrame: 3,
       length: 0
-    })
+    });
     overlayTakeOver();
   };
-
-  // e.target.style.pointerEvents = 'none';
-
-  // setTimeout(() => {
-  //   e.target.style.pointerEvents = 'all';
-  // }, 1500);
 };
 
 const Header = ({ children }) => (
