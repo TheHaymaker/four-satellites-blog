@@ -210,14 +210,6 @@ const Layout = ({ location, children, customSEO }) => (
             {!customSEO && <SEO buildTime={data.site.buildTime} />}
             <GlobalStyle />
             {children}
-            <Footer>
-              &copy;{' '}
-              {(() => {
-                const d = new Date();
-                return d.getFullYear();
-              })()}{' '}
-              by Four Satellites, LLC. All rights reserved.
-            </Footer>
           </React.Fragment>
         </ThemeProvider>
       </Transition>

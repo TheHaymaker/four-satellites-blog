@@ -10,7 +10,7 @@ export default function HTML(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         {props.headComponents}
         <link
-          href="https://fonts.googleapis.com/css?family=Special+Elite|Ubuntu:300,400|Work+Sans:400|600|Major+Mono+Display|Quattrocento+Sans:400,700"
+          href="https://fonts.googleapis.com/css?family=Work+Sans:400|600|Major+Mono+Display|Quattrocento+Sans:400,700"
           rel="stylesheet"
         />
         <link rel="stylesheet" href="style.css" />
@@ -21,16 +21,52 @@ export default function HTML(props) {
           This app works best with JavaScript enabled.
         </noscript>
         <nav>
+          {/* <span
+            role="link"
+            tabIndex="0"
+            onKeyPress={() => {}}
+            onClick={e => {
+              e.preventDefault();
+              console.log('I fire...');
+              window.handlePageTransition();
+              window.history.pushState({}, '', '/');
+              window.history.go(1);
+            }}
+          > */}
           <div className="logo">
             <canvas id="four-satellites" />
             <canvas id="four-satellites-1" />
             <canvas id="four-satellites-2" />
             <canvas id="four-satellites-3" />
           </div>
-          <button className="trigger-overlay">Transition the page</button>
+          {/* </span> */}
+          {/* <span
+            role="link"
+            tabIndex="0"
+            onKeyPress={() => {}}
+            onClick={e => {
+              e.preventDefault();
+              console.log('I fire...');
+              window.handlePageTransition();
+              window.history.pushState({}, '', '/');
+              window.history.go(1);
+            }}
+          > */}
+          <h1 className="logo-title">
+            fouR s<span className="title-special">A</span>tellites
+          </h1>
+          {/* </span> */}
         </nav>
-        <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
+        <div key="body" id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}
+        <footer>
+          &copy;{' '}
+          {(() => {
+            const d = new Date();
+            return d.getFullYear();
+          })()}{' '}
+          by <span className="logo-title">fouR sAtellites</span>, LLC. All rights reserved.
+        </footer>
 
         <canvas id="overlayAnimation" />
         <script src="sprite-animation.js" />

@@ -1,8 +1,8 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { Article, Button, Layout, SectionTitle, Wrapper } from '../components';
+import { Article, Button, Layout, Link, SectionTitle, Wrapper } from '../components';
 
 const Content = styled.div`
   grid-column: 2;
@@ -48,12 +48,10 @@ const IndexPage = ({
   <Layout>
     <Wrapper>
       <Hero>
-        <h1>Hi.</h1>
         <p>
-          I&apos;m John Doe, a Senior UX Developer with five years of industry experience,
-          specializing in developing React apps with the best UX users can get.
+          Consulting. Education. Speaking. Design. These are the four satellites that orbit our core
         </p>
-        <Link to="/contact" onClick={() => window.handlePageTransition()}>
+        <Link to="/contact">
           <Button big>
             <svg
               width="1792"
@@ -68,7 +66,7 @@ const IndexPage = ({
         </Link>
       </Hero>
       <Content>
-        <SectionTitle>Latest stories</SectionTitle>
+        <SectionTitle>Latest posts</SectionTitle>
         {postEdges.map(post => (
           <Article
             title={post.node.frontmatter.title}
