@@ -1,10 +1,10 @@
 /* eslint jsx-a11y/label-has-for:0 */
-import { Link } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import config from '../../config';
 import { Button, Header, Layout, Wrapper } from '../components';
+import Link from '../components/Link';
 
 const Content = styled.div`
   grid-column: 2;
@@ -48,9 +48,7 @@ const Contact = () => (
         <button type="submit" onClick={e => window.handlePageTransition(e)}>
           Trigger
         </button>
-        <Link to="/" timeout={200} onClick={e => window.handlePageTransition(e)}>
-          {config.siteTitle}
-        </Link>
+        <Link to="/">{config.siteTitle}</Link>
       </Header>
       <Content>
         <h1>Contact</h1>

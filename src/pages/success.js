@@ -1,11 +1,11 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
-import { Link } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import config from '../../config';
 import { Header, Layout, Wrapper } from '../components';
+import Link from '../components/Link';
 
 const Content = styled.div`
   grid-column: 2;
