@@ -22,6 +22,7 @@ const Hero = styled.div`
   grid-column: 2;
   padding: 3rem 2rem 6rem 2rem;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
   color: ${props => props.theme.colors.grey.dark};
 
   @media (max-width: ${props => props.theme.breakpoints.phone}) {
@@ -40,6 +41,11 @@ const Hero = styled.div`
   }
 `;
 
+const age = bday => {
+  const birthday = new Date(bday);
+  return ((new Date().getTime() - birthday.getTime()) / 31536000000).toFixed(2);
+};
+
 const IndexPage = ({
   data: {
     allMdx: { edges: postEdges }
@@ -48,8 +54,13 @@ const IndexPage = ({
   <Layout>
     <Wrapper>
       <Hero>
+        <p>Consulting. Education. Speaking. Design.</p>
+        <br />
         <p>
-          Consulting. Education. Speaking. Design. These are the four satellites that orbit our core
+          These are the four satellites that orbit the <strong>{age('11/21/1985')}</strong> years we
+          have spent on earth, of which
+          <strong>{((age('4/01/2015') / age('11/21/1985')) * 100).toFixed(0)}%</strong> has been
+          spent building things for the web.
         </p>
         <Link to="/contact">
           <Button big>
