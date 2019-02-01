@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { Article, Button, Layout, Link, SectionTitle, Wrapper } from '../components';
+import { Article, Button, Layout, Link, Navigation, SectionTitle, Wrapper } from '../components';
 
 const Content = styled.div`
   grid-column: 2;
@@ -79,6 +79,7 @@ const IndexPage = ({
           />
         ))}
       </Content>
+      <Navigation />
     </Wrapper>
   </Layout>
 );

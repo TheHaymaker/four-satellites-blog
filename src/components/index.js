@@ -3,6 +3,7 @@ import Button from './Button';
 import Header from './Header';
 import Layout from './Layout';
 import Link from './Link';
+import Navigation from './Navigation';
 import PrevNext from './PrevNext';
 import SectionTitle from './SectionTitle';
 import SEO from './SEO';
@@ -21,5 +22,6 @@ export {
   Subline,
   Wrapper,
   Transition,
-  Link
+  Link,
+  Navigation
 };

@@ -5,7 +5,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import config from '../../config';
-import { Header, Layout, SectionTitle, Wrapper } from '../components';
+import { Header, Layout, Navigation, SectionTitle, Wrapper } from '../components';
 
 const Content = styled.div`
   grid-column: 2;
@@ -49,6 +49,7 @@ const Category = ({
           </Title>
         ))}
       </Content>
+      <Navigation />
     </Wrapper>
   </Layout>
 );

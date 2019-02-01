@@ -4,7 +4,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import config from '../../config';
-import { Header, Layout, Wrapper } from '../components';
+import { Header, Layout, Navigation, Wrapper } from '../components';
 import Link from '../components/Link';
 
 const Content = styled.div`
@@ -50,6 +50,7 @@ const Success = () => (
         <h1>Your message was sent!</h1>
         <p>I'll answer your request as quick as possible.</p>
       </Content>
+      <Navigation />
     </Wrapper>
   </Layout>
 );

@@ -65,7 +65,11 @@ export default function HTML(props) {
             const d = new Date();
             return d.getFullYear();
           })()}{' '}
-          by <span className="logo-title">fouR sAtellites</span>, LLC. All rights reserved.
+          by{' '}
+          <span className="logo-title">
+            fouR s<span className="title-special">A</span>tellites
+          </span>
+          , LLC. All rights reserved.
         </footer>
 
         <canvas id="overlayAnimation" />

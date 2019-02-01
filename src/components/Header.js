@@ -1,20 +1,12 @@
-import { darken, lighten } from 'polished';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-// import OverlayTransition from './OverlayTransition';
 
 const Wrapper = styled.header`
-  background: linear-gradient(
-    45deg,
-    ${props => darken(0.1, props.theme.colors.primary)},
-    ${props => lighten(0.1, props.theme.colors.primary)}
-  );
   grid-column: 1 / -1;
   margin-left: -1rem;
   margin-right: -1rem;
   padding: 2rem 2rem 5rem 2rem;
-  box-shadow: inset 0px -10px 30px 0px rgba(0, 0, 0, 0.1);
 `;
 
 const Content = styled.div`
