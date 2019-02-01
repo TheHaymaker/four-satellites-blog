@@ -204,19 +204,23 @@ const Layout = ({ location, children, customSEO }) => (
       }
     `}
     render={data => (
-      <ThemeProvider theme={theme}>
-        <React.Fragment>
-          {!customSEO && <SEO buildTime={data.site.buildTime} />}
-          <GlobalStyle />
-          <Transition location={location}>{children}</Transition>
-          <Footer>
-            &copy; 2019 by John Doe. All rights reserved. <br />
-            <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a>
-            <br />
-            <span>Last build: {data.site.buildTime}</span>
-          </Footer>
-        </React.Fragment>
-      </ThemeProvider>
+      <Transition location={location}>
+        <ThemeProvider theme={theme}>
+          <React.Fragment>
+            {!customSEO && <SEO buildTime={data.site.buildTime} />}
+            <GlobalStyle />
+            {children}
+            <Footer>
+              &copy;{' '}
+              {(() => {
+                const d = new Date();
+                return d.getFullYear();
+              })()}{' '}
+              by Four Satellites, LLC. All rights reserved.
+            </Footer>
+          </React.Fragment>
+        </ThemeProvider>
+      </Transition>
     )}
   />
 );

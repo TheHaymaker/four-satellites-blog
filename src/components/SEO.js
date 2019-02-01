@@ -1,27 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-
-import config from '../../config'
+import PropTypes from 'prop-types';
+import React from 'react';
+import Helmet from 'react-helmet';
+import config from '../../config';
 
 const SEO = props => {
-  const { postNode, postPath, article, buildTime } = props
+  const { postNode, postPath, article, buildTime } = props;
 
-  let title
-  let description
+  let title;
+  let description;
 
-  const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
-  const homeURL = `${config.siteUrl}${realPrefix}`
-  const URL = `${homeURL}${postPath || ''}`
-  const image = `${homeURL}${config.siteBanner}`
+  const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+  const homeURL = `${config.siteUrl}${realPrefix}`;
+  const URL = `${homeURL}${postPath || ''}`;
+  const image = `${homeURL}${config.siteBanner}`;
 
   if (article) {
-    const postMeta = postNode.frontmatter
-    title = `${postMeta.title} | ${config.siteTitle}`
-    description = postNode.excerpt
+    const postMeta = postNode.frontmatter;
+    title = `${postMeta.title} | ${config.siteTitle}`;
+    description = postNode.excerpt;
   } else {
-    title = config.siteTitleAlt
-    description = config.siteDescription
+    title = config.siteTitleAlt;
+    description = config.siteDescription;
   }
 
   // schema.org in JSONLD format
@@ -39,28 +38,28 @@ const SEO = props => {
     name: config.siteTitle,
     author: {
       '@type': 'Person',
-      name: config.author,
+      name: config.author
     },
     copyrightHolder: {
       '@type': 'Person',
-      name: config.author,
+      name: config.author
     },
     copyrightYear: '2018',
     creator: {
       '@type': 'Person',
-      name: config.author,
+      name: config.author
     },
     publisher: {
       '@type': 'Person',
-      name: config.author,
+      name: config.author
     },
     datePublished: '2019-01-07T10:30:00+01:00',
     dateModified: buildTime,
     image: {
       '@type': 'ImageObject',
-      url: image,
-    },
-  }
+      url: image
+    }
+  };
 
   // Initial breadcrumb list
 
@@ -69,21 +68,21 @@ const SEO = props => {
       '@type': 'ListItem',
       item: {
         '@id': homeURL,
-        name: 'Homepage',
+        name: 'Homepage'
       },
-      position: 1,
+      position: 1
     },
     {
       '@type': 'ListItem',
       item: {
         '@id': `${homeURL}/contact`,
-        name: 'Contact',
+        name: 'Contact'
       },
-      position: 2,
-    },
-  ]
+      position: 2
+    }
+  ];
 
-  let schemaArticle = null
+  let schemaArticle = null;
 
   if (article) {
     schemaArticle = {
@@ -91,24 +90,24 @@ const SEO = props => {
       '@type': 'Article',
       author: {
         '@type': 'Person',
-        name: config.author,
+        name: config.author
       },
       copyrightHolder: {
         '@type': 'Person',
-        name: config.author,
+        name: config.author
       },
       copyrightYear: postNode.parent.birthtime,
       creator: {
         '@type': 'Person',
-        name: config.author,
+        name: config.author
       },
       publisher: {
         '@type': 'Organization',
         name: config.author,
         logo: {
           '@type': 'ImageObject',
-          url: `${homeURL}${config.siteLogo}`,
-        },
+          url: `${homeURL}${config.siteLogo}`
+        }
       },
       datePublished: postNode.parent.birthtime,
       dateModified: postNode.parent.mtime,
@@ -119,19 +118,19 @@ const SEO = props => {
       name: title,
       image: {
         '@type': 'ImageObject',
-        url: image,
+        url: image
       },
-      mainEntityOfPage: URL,
-    }
+      mainEntityOfPage: URL
+    };
     // Push current blogpost into breadcrumb list
     itemListElement.push({
       '@type': 'ListItem',
       item: {
         '@id': URL,
-        name: title,
+        name: title
       },
-      position: 3,
-    })
+      position: 3
+    });
   }
 
   const breadcrumb = {
@@ -139,8 +138,8 @@ const SEO = props => {
     '@type': 'BreadcrumbList',
     description: 'Breadcrumbs list',
     name: 'Breadcrumbs',
-    itemListElement,
-  }
+    itemListElement
+  };
 
   return (
     <Helmet>
@@ -170,21 +169,21 @@ const SEO = props => {
       {article && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
       <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
     </Helmet>
-  )
-}
+  );
+};
 
-export default SEO
+export default SEO;
 
 SEO.propTypes = {
   postNode: PropTypes.object,
   postPath: PropTypes.string,
   article: PropTypes.bool,
-  buildTime: PropTypes.string,
-}
+  buildTime: PropTypes.string
+};
 
 SEO.defaultProps = {
   postNode: null,
   postPath: null,
   article: false,
-  buildTime: null,
-}
+  buildTime: null
+};
