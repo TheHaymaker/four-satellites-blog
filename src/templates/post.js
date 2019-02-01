@@ -1,12 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
-import kebabCase from 'lodash/kebabCase'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-
-import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from '../components'
-import config from '../../config'
+import { graphql, Link } from 'gatsby';
+import MDXRenderer from 'gatsby-mdx/mdx-renderer';
+import kebabCase from 'lodash/kebabCase';
+import PropTypes from 'prop-types';
+import React from 'react';
+import styled from 'styled-components';
+import config from '../../config';
+import { Header, Layout, PrevNext, SEO, Subline, Wrapper } from '../components';
 
 const Content = styled.article`
   grid-column: 2;
@@ -40,18 +39,18 @@ const Content = styled.article`
     margin-bottom: 1rem;
     font-size: 16px;
   }
-`
+`;
 
 const Title = styled.h1`
   margin-bottom: 1rem;
-`
+`;
 
 const PostContent = styled.div`
   margin-top: 4rem;
-`
+`;
 
 const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) => {
-  const post = postNode.frontmatter
+  const post = postNode.frontmatter;
 
   return (
     <Layout customSEO>
@@ -78,28 +77,28 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
         </Content>
       </Wrapper>
     </Layout>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;
 
 Post.propTypes = {
   pageContext: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     next: PropTypes.object,
-    prev: PropTypes.object,
+    prev: PropTypes.object
   }),
   data: PropTypes.shape({
-    mdx: PropTypes.object.isRequired,
-  }).isRequired,
-}
+    mdx: PropTypes.object.isRequired
+  }).isRequired
+};
 
 Post.defaultProps = {
   pageContext: PropTypes.shape({
     next: null,
-    prev: null,
-  }),
-}
+    prev: null
+  })
+};
 
 export const postQuery = graphql`
   query postBySlug($slug: String!) {
@@ -110,7 +109,7 @@ export const postQuery = graphql`
       excerpt
       frontmatter {
         title
-        date(formatString: "MM/DD/YYYY")
+        date
         categories
       }
       timeToRead
@@ -122,4 +121,4 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;
