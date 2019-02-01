@@ -13,7 +13,10 @@ export default function HTML(props) {
           href="https://fonts.googleapis.com/css?family=Work+Sans:400|600|Major+Mono+Display|Quattrocento+Sans:400,700"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="./style.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/thehaymaker/four-satellites-blog/static/style.css"
+        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
@@ -47,7 +50,7 @@ export default function HTML(props) {
         </footer>
 
         <canvas id="overlayAnimation" />
-        <script src="./sprite-animation.js" />
+        <script src="https://cdn.jsdelivr.net/gh/thehaymaker/four-satellites-blog/static/sprite-animation.js" />
 
         <script
           dangerouslySetInnerHTML={{
@@ -73,10 +76,10 @@ export default function HTML(props) {
           }}
         />
 
-        <script src="./logo-animation.js" />
-        <script src="./logo-animation.1.js" />
-        <script src="./logo-animation.2.js" />
-        <script src="./logo-animation.3.js" />
+        <script src="https://cdn.jsdelivr.net/gh/thehaymaker/four-satellites-blog/static/logo-animation.js" />
+        <script src="https://cdn.jsdelivr.net/gh/thehaymaker/four-satellites-blog/static/logo-animation.1.js" />
+        <script src="https://cdn.jsdelivr.net/gh/thehaymaker/four-satellites-blog/static/logo-animation.2.js" />
+        <script src="https://cdn.jsdelivr.net/gh/thehaymaker/four-satellites-blog/static/logo-animation.3.js" />
       </body>
     </html>
   );
