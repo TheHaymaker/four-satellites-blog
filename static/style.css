@@ -65,7 +65,7 @@ strong {
 }
 
 #overlayAnimation {
-  position: absolute;
+  position: fixed;
   pointer-events: none;
   z-index: 9999;
   top: 0;
