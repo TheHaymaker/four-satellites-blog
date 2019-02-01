@@ -1,11 +1,11 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import config from '../../config';
-import { Header, Layout, PrevNext, SEO, Subline, Wrapper } from '../components';
+import { Header, Layout, Link, Navigation, PrevNext, SEO, Subline, Wrapper } from '../components';
 
 const Content = styled.article`
   grid-column: 2;
@@ -75,6 +75,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
           </PostContent>
           <PrevNext prev={prev} next={next} />
         </Content>
+        <Navigation />
       </Wrapper>
     </Layout>
   );

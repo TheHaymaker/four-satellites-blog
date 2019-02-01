@@ -4,7 +4,16 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import config from '../../config';
-import { Article, Header, Layout, Link, SectionTitle, Subline, Wrapper } from '../components';
+import {
+  Article,
+  Header,
+  Layout,
+  Link,
+  Navigation,
+  SectionTitle,
+  Subline,
+  Wrapper
+} from '../components';
 
 const Content = styled.div`
   grid-column: 2;
@@ -50,6 +59,7 @@ const Category = ({ pageContext: { category }, data: { allMdx } }) => {
             />
           ))}
         </Content>
+        <Navigation />
       </Wrapper>
     </Layout>
   );
