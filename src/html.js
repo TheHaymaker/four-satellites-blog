@@ -9,6 +9,10 @@ export default function HTML(props) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         {props.headComponents}
+        <link
+          href="https://fonts.googleapis.com/css?family=Special+Elite|Ubuntu:300,400|Work+Sans:400|600|Major+Mono+Display|Quattrocento+Sans:400,700"
+          rel="stylesheet"
+        />
         <link rel="stylesheet" href="style.css" />
       </head>
       <body {...props.bodyAttributes}>
@@ -19,7 +23,6 @@ export default function HTML(props) {
         <nav>
           <div className="logo">
             <canvas id="four-satellites" />
-            <canvas id="four-satellites-4" />
             <canvas id="four-satellites-1" />
             <canvas id="four-satellites-2" />
             <canvas id="four-satellites-3" />
@@ -31,34 +34,6 @@ export default function HTML(props) {
 
         <canvas id="overlayAnimation" />
         <script src="sprite-animation.js" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-    let transitionBtn = document.querySelector('.trigger-overlay');
-
-    transitionBtn.addEventListener('click', e => {
-      e.target.style.pointerEvents = 'none';
-      frames = 0;
-      frameIndex = 0;
-      tickCount = 0;
-      overlay = sprite({
-        context: canvas.getContext('2d'),
-        width: 13200,
-        height: 600,
-        image: overlayImage,
-        numberOfFrames: 22,
-        ticksPerFrame: 3,
-        length: 0
-      });
-      await overlayTakeOver();
-
-      setTimeout(() => {
-        e.target.style.pointerEvents = 'all';
-      }, 1500);
-    });
-        `
-          }}
-        />
 
         <script
           dangerouslySetInnerHTML={{
@@ -78,6 +53,8 @@ export default function HTML(props) {
       });
       overlayTakeOver();
     }
+
+    window.onpopstate = handlePageTransition;
         `
           }}
         />
@@ -86,7 +63,6 @@ export default function HTML(props) {
         <script src="logo-animation.1.js" />
         <script src="logo-animation.2.js" />
         <script src="logo-animation.3.js" />
-        <script src="logo-animation.4.js" />
       </body>
     </html>
   );
