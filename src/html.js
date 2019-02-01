@@ -21,41 +21,15 @@ export default function HTML(props) {
           This app works best with JavaScript enabled.
         </noscript>
         <nav>
-          {/* <span
-            role="link"
-            tabIndex="0"
-            onKeyPress={() => {}}
-            onClick={e => {
-              e.preventDefault();
-              console.log('I fire...');
-              window.handlePageTransition();
-              window.history.pushState({}, '', '/');
-              window.history.go(1);
-            }}
-          > */}
           <div className="logo">
             <canvas id="four-satellites" />
             <canvas id="four-satellites-1" />
             <canvas id="four-satellites-2" />
             <canvas id="four-satellites-3" />
           </div>
-          {/* </span> */}
-          {/* <span
-            role="link"
-            tabIndex="0"
-            onKeyPress={() => {}}
-            onClick={e => {
-              e.preventDefault();
-              console.log('I fire...');
-              window.handlePageTransition();
-              window.history.pushState({}, '', '/');
-              window.history.go(1);
-            }}
-          > */}
           <h1 className="logo-title">
             fouR s<span className="title-special">A</span>tellites
           </h1>
-          {/* </span> */}
         </nav>
         <div key="body" id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}
