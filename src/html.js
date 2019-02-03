@@ -13,10 +13,11 @@ export default function HTML(props) {
           href="https://fonts.googleapis.com/css?family=Work+Sans:400|600|Major+Mono+Display|Quattrocento+Sans:400,700"
           rel="stylesheet"
         />
-        <link
+        {/* <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/thehaymaker/four-satellites-blog/static/style.css"
-        />
+        /> */}
+        {/* <link rel="stylesheet" href="./style.css" /> */}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

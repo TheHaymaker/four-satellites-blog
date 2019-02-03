@@ -6,12 +6,13 @@ import React from 'react';
 import styled from 'styled-components';
 import config from '../../config';
 import { Header, Layout, Link, Navigation, PrevNext, SEO, Subline, Wrapper } from '../components';
+import '../style.css';
 
 const Content = styled.article`
   grid-column: 2;
   box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
   max-width: 1000px;
-  border-radius: 1rem;
+  border-radius: 3px;
   padding: 2rem 4.5rem;
   background-color: ${props => props.theme.colors.bg};
   z-index: 9000;

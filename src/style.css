@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  line-height: 120%;
 }
 
 html,
@@ -7,6 +8,26 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+/* grid system */
+
+.center-text {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.row.wrap {
+  flex-wrap: wrap;
+}
+
+blockquote {
+  font-size: 25px;
+  font-weight: 600;
 }
 
 a {
@@ -86,13 +107,13 @@ nav {
 
 .logo {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   transition: 0.75s all cubic-bezier(0, 0.96, 0, 1.02);
 }
 
-.logo.active {
-  transform: scale(1.2);
+.logo:hover {
+  transform: scale(1.1);
 }
 #four-satellites,
 #four-satellites-1,
@@ -222,9 +243,13 @@ footer > span {
 footer .logo-title {
   font-size: 25px;
 }
+.nav-wrapper {
+  position: relative;
+  z-index: 9000;
+}
 
 .hamburger {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 50px;
@@ -233,6 +258,9 @@ footer .logo-title {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
 }
 
 .hamburger,
@@ -285,10 +313,17 @@ span.line {
 }
 
 @media screen and (max-width: 768px) {
+  .col {
+    width: 50%;
+  }
+  .hamburger {
+    pointer-events: all;
+    opacity: 1;
+  }
   .fixed-nav {
     position: fixed;
     top: 0px;
-    left: 0px;
+    left: -100%;
     text-align: center;
     z-index: 999;
     background-color: white;
@@ -297,6 +332,15 @@ span.line {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0s left ease, 0.25s opacity ease-in-out;
+  }
+
+  .fixed-nav.active {
+    left: 0px;
+    opacity: 1;
+    pointer-events: all;
   }
   .fixed-nav ul li a {
     writing-mode: rl-tb;

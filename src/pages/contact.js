@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import config from '../../config';
 import { Button, Layout, Navigation, Wrapper } from '../components';
+import '../style.css';
 
 const Content = styled.div`
   grid-column: 2;

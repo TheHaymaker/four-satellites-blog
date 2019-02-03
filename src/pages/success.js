@@ -6,11 +6,12 @@ import styled from 'styled-components';
 import config from '../../config';
 import { Header, Layout, Navigation, Wrapper } from '../components';
 import Link from '../components/Link';
+import '../style.css';
 
 const Content = styled.div`
   grid-column: 2;
   box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
+  border-radius: 3px;
   padding: 2rem 4rem;
   background-color: ${props => props.theme.colors.bg};
   z-index: 9000;
