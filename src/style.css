@@ -275,11 +275,11 @@ span.line {
   display: block;
 }
 
-.hamburger:hover {
+.hamburger.active {
   justify-content: center;
 }
 
-.hamburger:hover .line {
+.hamburger.active .line {
   margin-bottom: 0px;
 }
 
@@ -295,20 +295,20 @@ span.line {
   transition: 0.2s all ease-in-out;
 }
 
-.hamburger:hover .line:nth-child(2) {
+.hamburger.active .line:nth-child(2) {
   transform: rotate(45deg);
 }
 
-.hamburger:hover .line:nth-child(2):after {
+.hamburger.active .line:nth-child(2):after {
   opacity: 1;
   transform: rotate(-90deg);
 }
 
-.hamburger:hover .line:first-child {
+.hamburger.active .line:first-child {
   opacity: 0;
 }
 
-.hamburger:hover .line:last-child {
+.hamburger.active .line:last-child {
   opacity: 0;
 }
 
@@ -335,6 +335,7 @@ span.line {
     opacity: 0;
     pointer-events: none;
     transition: 0s left ease, 0.25s opacity ease-in-out;
+    width: 100%;
   }
 
   .fixed-nav.active {
