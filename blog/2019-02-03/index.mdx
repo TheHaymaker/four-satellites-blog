@@ -1,6 +1,6 @@
 ---
 date: '2019-02-03'
-title: 'Learning to Code (Part 1): Just Starting Out'
+title: 'Learn to Code (Part 1): Just Starting Out'
 categories:
   - Code
   - New-to-code
@@ -12,7 +12,7 @@ Whether you are making a career change completely, leveling-up in your current r
 
 I always say the most valuable thing to someone who is learning to code is having someone who is already in the industry and who is able and willing to help steer you in the right direction. I did not have that person - and so I am going to try to give you the next best thing - a series that outlines common sense and incremental steps that you can take to gradually acquire knowledge and experience.
 
-##### Where do I even start?
+##### 'But where do I even begin?'
 
 The hardest thing in the beginning of the **learning to code** journey is not knowing what you don't know.
 
@@ -30,39 +30,171 @@ Our first step is to begin at a place that the 'seniorest' of senior engineers t
 
 > It is critical that you allow yourself to be a beginner.
 
-When all is said and done - at the end of the day, a web app is rendered using HTML, CSS and JavaScript. We need to establish a strong foundation in two of the three front-end languages before moving on so that when we do focus on JavaScript - we can dedicate more headspace to that end since we have practiced and have a solid understanding of how and why HTML and CSS are behaving the way the do and what their role is in the front end ecosystem.
+When all is said and done - at the end of the day, a web app is rendered using HTML, CSS and JavaScript. We need to establish a strong foundation in two of the three front-end languages before moving on so that when we do focus on JavaScript - we can dedicate more head space to that end. The idea is - since we have put in the practice and have a solid understanding of how and why HTML and CSS are behaving the way the do and what their role is in the front end ecosystem - we can focus solely on doing the same with JavaScript.
+
+In short, we try to minimize what we are focusing on since our brains can only hold so much stuff.
+
+So let's get started with a brief introduction.
+
+##### The Internet
+
+When I first started learning to code, I was both inspired and underwhelmed by what the internet essentially is: _a text messaging service_.
+
+Yes, you read that correctly.
+
+Just like we send our friends text messages on our phones, or send emails to our co-workers from Gmail or Outlook - the Web is a series of messages sent and received.
+
+The _protocol_ that enables this to happen - protocol being an agreed upon set of rules and standards that we can all follow when sending and receiving these sorts of messages - is known as **http** (and HTTPS and HTTP2), or [Hypertext Transfer Protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
+
+You have seen and used this protocol hundreds if not thousands of times before whenever you punch in a website name in your browser's search bar: `https://foursatellites.com`.
+
+This protocol allows us to send and receive messages from a **client**. A client can be a browser such as Firefox. A client can also be an email software such as Gmail or Outlook. But emails have their own sets of protocols: IMAP, SMTP, POP, etc. A client can also be a cell phone to send text messages, right? Yep, they have their own protocol: SMS.
+
+It's essentially the same though across the board: we are sending and receiving text that is sent across the wires and tubes that make up the physical infrastructure of the Internet. Only on the web, those messages are comprised of .html, .css and .js files, images, .pdf, video and audio content.
+
+And it is the machinations within the browser that know how to interpret the contents of those .html, .css and .js files and paint something on the screen for us.
+
+Our task is to provide the browser with what it needs and understands in order to paint something on the screen for our users.
+
+---
+
+When we want to go to a website, we punch in a URL. Easy enough. We all know how to do that.
+
+But what happens when we type that in and hit `Enter`?
+
+Well, first, the thing that we are typing is called a **domain name**. A domain name is mapped to a unique identifier that is associated with a unique machine. That machine, in this example, could be a computer in Montana, one of thousands of other computers in a data center for instance.
+
+We are renting a part of that computer. We found a hosting provider and pay 7USD/month to rent part of that computer in Montana (or some place we don't see - sorry, Montana. Mad <3).
+
+That computer has an **ip address**. An IP address is equivalent to your street address, P.O. Box number or your central mail location if you live on a reservation.
+
+It typically takes the form of a series of numbers like: `91.198.174.192`.
+
+If you punch that IP address into your browser, it will try to access the machine that it is mapped to. The trouble with IP addresses (other than that we are running out of them) is that their form does not lend itself to easy memorization. In other words, they are not very human readable.
+
+The solution to this is a domain name.
+
+Domain names serve as stand-ins or aliases for our unique IP addresses so that instead of going to `91.198.174.192` which doesn't mean a whole lot to me - I can punch in 'wikipedia.org' and I will get the same stuff.
+
+We map our domain names to the IP address we get from our host. So if you use, say, [Namecheap.com](https://www.namecheap.com) to purchase a domain name, you would map it to your IP address within Namecheap.com's admin panel.
+
+Once that is in place, anytime anyone punches in your domain name, it will go to the computer you are renting in Montana and check to see if it has the files the user is requesting.
+
+If it does, it will send back an `HTTP 200 OK` success message along with the payload - or, an index.html file with your website.
+
+If that computer in Montana does not have what you want, it will send back an `HTTP 404` message, telling us, "Hey, I don't got that stuff!"
+
+##### HTML
+
+HTML, or **hypertext markup language** is a language that enables us to create structure, hierarchy and semantic relationships. To put it simply: if a website is a body, the HTML is the skeleton.
+
+To create that structure, HTML gives us elements in the form of tags. A tag has an opening and a closing, and our content goes inside.
+
+An opening tag: `<p>`. The `p` tag refers to a 'paragraph' element.
+
+A closing tag for the same element: `</p>`.
+
+Together, with some text content inside: `<p>Hello, World!</p>`.
+
+In the browser, this would look like:
+
+<div style="border: 1px solid black;">
+  <p>Hello, World!</p>
+</div>
+
+We use combinations of tags to build out our web pages. But these tags need to follow a certain convention. An HTML document has a structure of its own:
+
+```html
+<!DOCTYPE html>
+<!-- While most browsers will insert this top level declaration
+    for us, it is best practice that we include it.
+    This does two things:
+    1) it tells the browser, "YO, PREPARE YOURSELF FOR HTML"
+    2) It is a hold over from the old, wild days where 
+      multiple versions of the HTML language were being used.
+      There were times where you needed to specify which version
+      of HTML you wanted to use.
+
+      Those days are gone. Phew!
+
+      Just know that this declaration says to the browser:
+      "YO, USE HTML5, OK? COOL. THANKS."
+
+ -->
+<html lang="en">
+  <head>
+    <!-- the <head></head> contains meta information used
+      by web crawlers and search engines like Google
+      to index and categorize your site for search
+   -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- This is a comment -->
+    <!-- comments are ignored and are not visible to the user
+         but they help us organize and communicate our code -->
+
+    <!-- the html that would be visible in the browser would go here 
+      inside the <body></body> tag
+    -->
+  </body>
+</html>
+```
+
+We will see this structure again and again, so if this feels overwhelming for now - rest easy. It is a temporary feeling that will soon subside as soon as you get your hands dirty and start writing HTML of your own.
+
+The above HTML snippet without all of the comments and meta information looks like:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My website | Home</title>
+  </head>
+  <body>
+    <!-- content goes here -->
+  </body>
+</html>
+```
+
+It consists of an opening and closing `html` tag, then, nested inside of that html tag, we see we have an opening and closing `head` and `body` tag. That's it. That's all we need to get to started creating our first web page.
+
+##### CSS
 
 ##### Next steps
 
-1. Review Jeremy Thomas' awesome resource [Marksheet.io](https://marksheet.io). Start with reading the `Intro to the Internet`, which is a nice primer on how the internet works with browsers, domain names, etc. I suspect you will be surprised - as I was - by the extent to which you overestimate how much you knew about the internet. Simply because we use it everyday does not mean we know anything about the protocols and systems in place that make it happen.
+**1)**. Review Jeremy Thomas' awesome resource [Marksheet.io](https://marksheet.io). Start with reading the `Intro to the Internet`, which is a nice primer on how the internet works with browsers, domain names, etc. I suspect you will be surprised - as I was - by the extent to which you overestimate how much you knew about the internet. Simply because we use it everyday does not mean we know anything about the protocols and systems in place that make it happen.
 
-  After that, I would review the section on HTML and CSS, as well. But don't spend too much time here as this is simply our first pass. You'll return and reference this resource many more times in the next steps.
+After that, I would review the section on HTML and CSS, as well. But don't spend too much time here as this is simply our first pass. You'll return and reference this resource many more times in the next steps.
 
-2. Before actually starting to build anything - we need to first get you one of the most critical tools in a programmer's toolbox: a text editor.
+**2)**.Before actually starting to build anything - we need to first get you one of the most critical tools in a programmer's toolbox: a text editor.
 
-  For now, I encourage you to download and use Visual Studio Code. Yes, it is made by Microsoft. And yes, it is one of the best text editors out there (and has quickly become the industry go-to). You can read more about it and download a copy for your Operating System(OS) [here](https://code.visualstudio.com/).
+For now, I encourage you to download and use Visual Studio Code. Yes, it is made by Microsoft. And yes, it is one of the best text editors out there (and has quickly become the industry go-to). You can read more about it and download a copy for your Operating System(OS) [here](https://code.visualstudio.com/).
 
-  The reason this step needs to come first before actually coding anything is because of what text editors give us the ability to do.
+The reason this step needs to come first before actually coding anything is because of what text editors give us the ability to do.
 
-  ##### Why do we use text editors?
+##### Why do we use text editors?
 
-  While we could and can write our programs inside of a plain text editor like Notepad - we don't. And we don't because inside of Notepad, we - as authors of our program - are responsible for every single character we type. That opens up a ton of room for typos, syntax errors, misspellings, etc. - things that computer programs really care a lot about.
+While we could and can write our programs inside of a plain text editor like Notepad - we don't. And we don't because inside of Notepad, we - as authors of our program - are responsible for every single character we type. That opens up a ton of room for typos, syntax errors, misspellings, etc. - things that computer programs really care a lot about.
 
-  So to make our lives easier, we use text editors which give us features such as:
+So to make our lives easier, we use text editors which give us features such as:
 
-    - file-extension-recognized syntax and color highlighting
-    - indentation assistance / highlighting
-    - tab completion (the editor intuitively completes the HTML tag that we start typing so that we don't have to type each character of the opening and closing tag, e.g. `a` becomes `<a href=""></a>` simply by typing `a` and then hitting the `TAB` key).
+- file-extension-recognized syntax and color highlighting
+- indentation assistance / highlighting
+- tab completion (the editor intuitively completes the HTML tag that we start typing so that we don't have to type each character of the opening and closing tag, e.g. `a` becomes `<a href=""></a>` simply by typing `a` and then hitting the `TAB` key).
 
-  Communication is paramount in coding. We write our code to be compliant with what the computer needs, but the code ultimately is not for the computer. The code is _for_ us.
+Communication is paramount in coding. We write our code to be compliant with what the computer needs, but the code ultimately is not for the computer. The code is _for_ us.
 
-  Syntax highlighting, code completion and other benefits of using a text editor (of which there are many more) help us write more efficient, more communicative code for ourselves, our team members and future versions of both as we reenter code bases again and again in the future. Writing code in this way is akin to giving a gift to your future self.
+Syntax highlighting, code completion and other benefits of using a text editor (of which there are many more) help us write more efficient, more communicative code for ourselves, our team members and future versions of both as we reenter code bases again and again in the future. Writing code in this way is akin to giving a gift to your future self.
 
-3. The best way to learn HTML and CSS is by building things. That is what I love about Shay Howe's _Learn to Code HTML & CSS_ book, which is completely available for free online [here](https://learn.shayhowe.com/html-css/).
+**3)**. The best way to learn HTML and CSS is by building things. That is what I love about Shay Howe's _Learn to Code HTML & CSS_ book, which is completely available for free online [here](https://learn.shayhowe.com/html-css/).
 
-  There are two tracks: 1) An Intro course and 2) An Advanced HTML & CSS course.
+There are two tracks: 1) An Intro course and 2) An Advanced HTML & CSS course.
 
-  Your job is to dedicate time to completing both, first the intro, then the advanced course.
+Your job is to dedicate time to completing both, first the intro, then the advanced course.
 
 For now - that is plenty to get you started. We'll be back shortly with Part 2.
 
