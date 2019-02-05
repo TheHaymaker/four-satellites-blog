@@ -162,7 +162,43 @@ The above HTML snippet without all of the comments and meta information looks li
 
 It consists of an opening and closing `html` tag, then, nested inside of that html tag, we see we have an opening and closing `head` and `body` tag. That's it. That's all we need to get to started creating our first web page.
 
+---
+
 ##### CSS
+
+CSS, or **cascading stylesheets**, is the language that allows us to move our content from plain, strictly hierarchical content of white backgrounds, black text and blue underlined links, to colorful, intentionally positioned elements that depict the digital experiences we have come to expect.
+
+Continuing to use the body as our guiding metaphor - HTML is the skeleton. CSS involves anything related to the appearance of the body: the clothes, the skin, the hair, the width and height of the body - even the shadow it casts on the floor or wall nearby.
+
+> One of the biggest challenges in the beginning is seeing some plain HTML on the page and not knowing how to turn that into something polished, ordered, delightful. The process is not clear, or intuitive or natural. It is a process that we have to practice - and fail at - again and again until the connection is made, until that understanding becomes intuitive.
+
+How many years did your parents dress you, tie your shoes, etc. until you could do it on your own? At least a couple of years, I am assuming.
+
+The same goes for CSS. Our options are so varied and numerous that it is totally sensical that it would take us some time to learn what our options might be, what is - shall we say - _en vogue_ or not.
+
+The syntax of CSS is a follows:
+
+```css
+selector {
+  property-we-want-style: value-we-want;
+}
+```
+
+The `selector` in this case refers to one of a few things. First, it could reference the name of an HTML element, such as `p`. It could refer to a class name, `.title`, or an id, `#main`. We will go more into how to utilize classes and id's later on in the series.
+
+We reference the thing we want to style in the HTML, and then inside a set of curly braces `{`---`}` we reference the specific style attributes that we want to change, and provide the new value that we want to use.
+
+Take this example where I want to change the background color of the `<body>` element on my website. I would do it like so:
+
+```css
+body {
+  background-color: black;
+}
+```
+
+That is the general syntax of our CSS. Again - we are going to get into the weeds on CSS much more so throughout this series. For now, however, you have enough of an understanding to move on.
+
+---
 
 ##### Next steps
 
