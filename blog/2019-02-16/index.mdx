@@ -1,0 +1,133 @@
+---
+date: '2019-02-16'
+title: 'Learn to Code (Part 2): Overcoming the CSS learning curve by mastering syntax, the cascade, and how specificity breaks the cascade'
+categories:
+  - Code
+  - CSS
+  - New-to-code
+---
+
+## The view from 20,000 feet
+
+HTML without CSS (Cascading Style Sheets) is a truly unremarkable thing to look at. That is the good and the bad news.
+
+You are about to create many projects that use both HTML and CSS that do not match the polished examples that you have come to expect from the websites and apps that you already use.
+
+You are going to judge yourself constantly due to the vast gulf that exists between what your project looks like and what you think they should look like based on your learned expectations.
+
+> The single most dangerous thing to our learning in the beginning is the simple, undeniably grand expanse between our expectations for the visual elements of a website and what we are currently capable of.
+
+With that mind, let us set a few things straight up front:
+
+1. There is no shortcut to mastering CSS and creating polished User Interfaces with HTML and CSS. There is no jumping the line here.
+2. Creating hundreds of projects that fall short of our expectations IS the process of becoming great at this.
+3. Every 'failed' attempt at doing a thing - be it with HTML, CSS or JavaScript - we are learning, whether we know it or not. So nothing - _nothing_ - is lost in these early attempts and experiences - it just might not be obvious to you at the time of how or why it is valuable.
+
+### Syntax
+
+The general syntax for a CSS rule adheres to the following format:
+
+```css
+selector {
+  style-attribute: style-attribute-value;
+}
+```
+
+Let's break this down line by line.
+
+First, we have a selector. CSS gives us the ability to apply style rules to HTML elements. In order to do that, we use a 'selector' to identify an element or elements.
+
+A CSS selector can take the form of three main possibilities:
+
+1. an HTML element-selector.
+2. a class name
+3. an id name
+
+Here is some sample HTML that we'll use to demonstrate these three selectors.
+
+#### Element Selectors
+
+First, an element-level selector:
+
+```html
+<h1>Four Satellites</h1>
+```
+
+If we wanted to style this `<h1>` tag by changing the text color to red, we could reference it in our CSS like this:
+
+```css
+h1 {
+  color: red;
+}
+```
+
+If we had set out to style that `<h1>` in that way, we would be successful in this case.
+
+However, because we are using the HTML element-level selector in our CSS - the browser will try to apply these style declarations (e.g. making the text color red) to **all** `<h1>` tags on our site.
+
+This type of selector - while useful for general styling rules - is the least _specific_. We'll dive deeper into specificity shortly.
+
+For now, let's look at more examples.
+
+#### Class Selectors
+
+If I only wanted a certain number of `<h1>` tags to have the text color of red, and I wanted to declare in my HTML markup which ones would have that style, I could leverage a class-level selector.
+
+In my HTML, I would declare a class like this:
+
+```html
+<h1 class="headline">Four Satellites</h1>
+<h1>This blog post is about CSS</h1>
+<h1 class="headline">This example involves different selectors</h1>
+```
+
+Then, in our CSS:
+
+```css
+h1 {
+  color: blue;
+}
+
+.headline {
+  color: red;
+}
+```
+
+We can reference class-level selectors in our CSS by using the dot-notation. The `.` in `.headline` tells the browser that this set of styling rules should be applied to elements that that the value of `headline` in its class attribute. We can add class attributes to our HTML by adding the `class="class-name-goes-here"` inside of the `<` and `>` carrots of the opening html tag.
+
+### The Cascade
+
+Using our example from above, this is how the CSS will be applied to our HTML:
+
+1. All `h1` tags will have a text color of blue.
+2. All elements that have a class name of `headline` will have a text color of red.
+3. If an `h1` tag had a text color of blue, but that `h1` tag _also has a class name of `headline`_, the style rule for making the text color blue will be _overridden_ by the style rule that makes the text color red.
+
+In other words, both sets of style rules are being applied simultaneously - but the last one in the sequence wins out and takes precedence. This is partly due to the fact that CSS is interrupted top-down, meaning that a style rule on line 1 could be over-ridden further down on line 200 if there is a valid selector that references the same HTML element.
+
+This is often referred to as the **cascade** of CSS. The style rule that comes last _wins_ \*.
+
+\* Selector specificity will break this cascade-behavior in some cases. We'll explore further in later examples. So when we talk about the cascade, it is _generally_ true, but there are reasons (which we will discuss) why it might not be as consistent as we might otherwise interpret it to be.
+
+#### ID Selectors
+
+The last selector example involves the use of the HTML `id` attribute. Similar to how we applied classes, we can apply an id.
+
+```html
+<h1 id="the-headline">Four Satellites</h1>
+```
+
+And then, in our CSS:
+
+```css
+#the-headline {
+  color: black;
+}
+```
+
+The key differences between an `id` selector and a class selector include:
+
+- IDs can be used only once on the page - making them significantly more specific than the either element-level and class-level selectors
+- We use the `#` symbol to reference an `id` selector in our CSS (instead of the dot notation for class names)
+
+### Specificity

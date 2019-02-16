@@ -1,0 +1,165 @@
+code[class*='language-'],
+pre[class*='language-'] {
+  font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono',
+    'Nimbus Mono L', 'Courier New', Courier, monospace !important;
+  font-size: 14px !important;
+  line-height: 1.375 !important;
+  direction: ltr !important;
+  text-align: left !important;
+  white-space: pre !important;
+  word-spacing: normal !important;
+  word-break: normal !important;
+  -moz-tab-size: 4 !important;
+  -o-tab-size: 4 !important;
+  tab-size: 4 !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+  hyphens: none !important;
+  background: #2a2734 !important;
+  color: #afa0fe !important;
+}
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  text-shadow: none !important;
+  background: #6a51e6 !important;
+}
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none !important;
+  background: #6a51e6 !important;
+}
+pre[class*='language-'] {
+  padding: 1em !important;
+  margin: 0.5em 0 !important;
+  overflow: auto !important;
+}
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em !important;
+  border-radius: 0.3em !important;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6c6783 !important;
+}
+.token.punctuation {
+  color: #6c6783 !important;
+}
+.token.namespace {
+  opacity: 0.7 !important;
+}
+.token.tag,
+.token.operator,
+.token.number {
+  color: #e09142 !important;
+}
+.token.property,
+.token.function {
+  color: #c4b9fe !important;
+}
+.token.tag-id,
+.token.selector,
+.token.atrule-id {
+  color: #eeebff !important;
+}
+code.language-javascript,
+.token.attr-name {
+  color: #c4b9fe !important;
+}
+code.language-css,
+code.language-scss,
+.token.boolean,
+.token.string,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.language-scss .token.string,
+.style .token.string,
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit,
+.token.statement,
+.token.regex,
+.token.atrule {
+  color: #fc9 !important;
+}
+.token.placeholder,
+.token.variable {
+  color: #fc9 !important;
+}
+.token.deleted {
+  text-decoration: line-through !important;
+}
+.token.inserted {
+  border-bottom: 1px dotted #eeebff !important;
+  text-decoration: none !important;
+}
+.token.italic {
+  font-style: italic !important;
+}
+.token.important,
+.token.bold {
+  font-weight: bold !important;
+}
+.token.important {
+  color: #c4b9fe !important;
+}
+.token.entity {
+  cursor: help !important;
+}
+pre > code.highlight {
+  outline: 0.4em solid #8a75f5 !important;
+  outline-offset: 0.4em !important;
+}
+.line-numbers .line-numbers-rows {
+  border-right-color: #2c2937 !important;
+}
+.line-numbers-rows > span:before {
+  color: #3c3949 !important;
+}
+.line-highlight {
+  background: rgba(224, 145, 66, 0.2) !important;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(70%, rgba(224, 145, 66, 0.2)),
+    to(rgba(224, 145, 66, 0))
+  ) !important;
+  background: linear-gradient(
+    to right,
+    rgba(224, 145, 66, 0.2) 70%,
+    rgba(224, 145, 66, 0)
+  ) !important;
+}
+
+/*# sourceMappingURL=prism-base2tone-evening-dark.css.map */
+
+span.token.plain {
+  color: #acadb1 !important;
+}
+
+/* overrides color-values for the Line Highlight plugin
+ * http://prismjs.com/plugins/line-highlight/
+ */
+.line-highlight {
+  background: rgba(107, 115, 148, 0.2) !important;
+  background: -webkit-linear-gradient(
+    left,
+    rgba(107, 115, 148, 0.2) 70%,
+    rgba(107, 115, 148, 0)
+  ) !important;
+  background: linear-gradient(
+    to right,
+    rgba(107, 115, 148, 0.2) 70%,
+    rgba(107, 115, 148, 0)
+  ) !important;
+}

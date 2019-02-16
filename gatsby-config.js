@@ -29,6 +29,16 @@ module.exports = {
       options: {
         gatsbyRemarkPlugins: [
           {
+            resolve: `gatsby-plugin-mdx-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false
+            }
+          },
+          {
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',
@@ -44,7 +54,7 @@ module.exports = {
               linkImagesToOriginal: false
             }
           },
-          // TODO: Replace with "mdx-component-autolink-headers"
+          // TODO: Replace with 'mdx-component-autolink-headers'
           {
             resolve: 'gatsby-remark-autolink-headers',
             options: {

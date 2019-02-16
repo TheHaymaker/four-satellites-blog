@@ -6,6 +6,9 @@ import theme from '../../config/theme';
 import SEO from './SEO';
 import Transition from './Transition';
 
+require('../../prism.css');
+require('prismjs/plugins/line-numbers/prism-line-numbers.css');
+
 const GlobalStyle = createGlobalStyle`
   *,
   *:before,
@@ -17,10 +20,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
-  ::selection {
-    color: ${props => props.theme.colors.bg};
-    background: ${props => props.theme.colors.primary};
-  }
+  
   html {
     font-family: ${props => props.theme.fontFamily.sansSerif};
     font-size: ${props => props.theme.baseFontSize};

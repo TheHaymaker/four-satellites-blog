@@ -384,3 +384,17 @@ span.line {
     height: 110px;
   }
 }
+
+code {
+  font-family: Monospace, sans-serif;
+  font-size: 0.9em;
+  padding: 1px 5px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 2px 7px -4px #020335;
+  display: inline-block;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+/*# sourceMappingURL=prism-base2tone-lake-dark.css.map */
