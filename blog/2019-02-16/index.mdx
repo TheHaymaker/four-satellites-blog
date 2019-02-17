@@ -196,10 +196,55 @@ If, however, we said:
 
 If just a single one of those class names is missing from the HTML element, the style rules that we define in the curly brace block in our CSS would not be applied to that element.
 
-So chaining selectors together can do two things:
+We can also combine selectors to drill down specific elements under specific circumstances. For example, consider we have the following HTML:
 
-1. We can leverage chaining to increase our overall specificity score.
-2. We can leverage chaining to narrow down when and under what conditions in which our styles are applied.
+```html
+<body>
+  <div class="wrapper">
+    <p>A nested paragraph</p>
+  </div>
+  <p>A non-nested paragraph</p>
+</body>
+```
+
+I could leverage a selector combination to only style the `p` tags nested inside of the `wrapper` class.
+
+```css
+.wrapper p {
+  color: red;
+}
+
+p {
+  color: black;
+}
+```
+
+Here, when we separate selectors by a `SPACE`, we infer hierarchy. We are saying, for all the paragraph tags inside of every element that has a class of `wrapper`, let's make that text red.
+
+Furthermore, because the combination of selectors has greater specificity than the style rule further down in our stylesheet where we say all `p` tags should have black text - the nested paragraph will still be red.
+
+This is specificity at work.
+
+> So chaining selectors together can do two things:
+>
+> 1. We can leverage chaining to increase our overall specificity score.
+> 2. We can leverage chaining to narrow down when and under what conditions in which our styles are applied.
+
+Let's look at two more examples of selector combinations, and evaluate which one would be more specific.
+
+`.wrapper .headline #first-letter`
+![multiple selectors](./4.png)
+
+`body div.wrapper h1.headline span#first-letter`
+![multiple selectors](./5.png)
+
+Which one do you think has a greater specificity?
+
+Why?
+
+Knowing how this happens is half the battle. But determining exactly how the specificity shakes out can be tricky. We don't always own the code bases we are charged with modifying, and so sometimes we will need to write CSS that will override existing styles.
+
+To help you make this determination, I suggest using the [CSS specificity calculator](https://specificity.keegan.st/) where you can easily compare two sets of CSS selectors.
 
 ### How to apply CSS
 
