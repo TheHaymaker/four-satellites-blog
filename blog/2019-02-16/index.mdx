@@ -131,3 +131,130 @@ The key differences between an `id` selector and a class selector include:
 - We use the `#` symbol to reference an `id` selector in our CSS (instead of the dot notation for class names)
 
 ### Specificity
+
+Knowing how CSS calculates specificity under the hood is critical to CSS mastery. Why? Because specificity can and does break the cascade in our stylesheets - and knowing why that happens means you can debug those issues when they arise that much more effectively.
+
+So first, let's talk about the regions of specificity that are available to us. We've already discussed three of them.
+
+![Specificity chart](./css-specificity-chart.png)
+
+For every selector we use in our CSS, the specificity calculation attributes 1 point to each region that is used.
+
+To illustrate this, we'll calculate our `<h1>` examples.
+
+`h1`
+
+![element](./1.png)
+
+`.headline`
+
+![class](./2.png)
+
+`#the-headline`
+
+![id](./3.png)
+
+The **specificity score** here is calculated by adding each region's value. In the above example, the total value is **1**.
+
+If we were comparing one class selector to another, they would both have a value of 1, and they would both occupy the classes region. Meaning they have equal specificity. It is in this scenario that the cascade would be applied and would win.
+
+If, however, we compared a class selector with an element selector - they would both have a total specificity score of 1, but the class selector would win because it occupied a more specific region. It is a scenario like this when - depending on the order of our style rules, the cascade would likely break.
+
+It gets more convoluted when we use multiple selectors to define a style rule set.
+
+#### Chaining Selectors to Increase Specificity
+
+So far, we have used CSS selectors using a single selector. But often, projects utilize a combination of selectors chained together.
+
+Let's take a look at some examples.
+
+```html
+<h1 class="title headline lrg-text">Four Satellites</h1>
+```
+
+Here, our `h1` has three class names.
+
+If we referenced this element like so:
+
+```css
+.title {
+  color: red;
+}
+```
+
+...it would have a specificity score of 1, weighted by occupying the classes region.
+
+If, however, we said:
+
+```css
+.title.headline.lrg-text {
+  color: black;
+}
+```
+
+...we would be saying, _OK, for every element that has a class name of `title` AND `headline` AND `lrg-text`, apply the following styles_...
+
+If just a single one of those class names is missing from the HTML element, the style rules that we define in the curly brace block in our CSS would not be applied to that element.
+
+So chaining selectors together can do two things:
+
+1. We can leverage chaining to increase our overall specificity score.
+2. We can leverage chaining to narrow down when and under what conditions in which our styles are applied.
+
+### How to apply CSS
+
+There are three main options of applying CSS to our page.
+
+First, we can create what is known as an **internal stylesheet**.
+
+To create an internal stylesheet, we can use the `style` tag nested in the `<head>` or our HTML. Inside of that style tag, we can write CSS and the CSS-syntax will be respected.
+
+This is what an internal stylesheet would look like:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      h1 {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    ...
+  </body>
+</html>
+```
+
+This method is good for small snippets of CSS or quickly adding styles on-the-fly, but as our style rules grow - this method's effectiveness breaks down. It makes our HTML potentially thousands of lines long, making it hard to navigate, manage and update.
+
+To help us with this, we can apply styles using an **external stylesheet**.
+
+To create one, you simply create a new file in your projects directory - for instance, `styles.css` - and you reference it in the `<head>` using a `<link>` tag like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    ...
+  </body>
+</html>
+```
+
+We write our CSS in the `styles.css` file, and our code editor should pick up the `.css` file extension and give us nice CSS-related syntax highlighting.
+
+Whether you are using an **internal stylesheet**, an **external stylesheet**, or some combination of the two, these applications of CSS to our page _does not impact how specificity is calculated_. The order of our stylesheets may, however, impact how styles cascade.
+
+The last method that we'll cover here involves the use of **inline styles**. This is where we apply style rules directly to HTML elements directly. We do this by writing our style rules inside of the HTML `style` attribute. It looks like this:
+
+```html
+<h1 style="color: red;">Four Satellites</h1>
+```
+
+This is, as we illustrated earlier, is the most specific application of CSS, and can only be over-ridden by the `!important` flag or directly modifying the styles inline via JavaScript - both which we will not cover in this section. Simply know that these options exist. For now, we are going to avoid modifying styles in this way - these methods to override inline styles are our nuclear option: to be used as a last resort.
