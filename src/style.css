@@ -16,6 +16,11 @@ body {
   text-align: center;
 }
 
+.center-mdx-component {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 .row {
   display: flex;
   justify-content: space-around;
@@ -46,14 +51,14 @@ a:hover > button {
 }
 
 strong {
-  font-family: 'Major Mono Display', monospace;
+  font-family: "Major Mono Display", monospace;
   line-height: 132%;
   padding: 5px;
   box-shadow: 0px 2px 0px 0px black;
 }
 
 .logo-title {
-  font-family: 'Major Mono Display', monospace;
+  font-family: "Major Mono Display", monospace;
   font-size: 25px;
   margin-top: 0px;
   margin-bottom: 40px;
@@ -65,7 +70,7 @@ strong {
 }
 
 .title-special:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0px;
   left: 0;
@@ -198,7 +203,7 @@ nav {
   padding-left: 8px;
   font-size: 15px;
   text-transform: lowercase;
-  font-family: 'Major Mono Display', monospace;
+  font-family: "Major Mono Display", monospace;
   writing-mode: vertical-rl;
   text-orientation: upright;
   margin: 5px;
@@ -214,7 +219,7 @@ nav {
 }
 
 .fixed-nav ul li a:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0px;
@@ -284,7 +289,7 @@ span.line {
 }
 
 .hamburger .line:nth-child(2):after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -310,6 +315,21 @@ span.line {
 
 .hamburger.active .line:last-child {
   opacity: 0;
+}
+
+button.mdx-btn {
+  background: #ee5456;
+  color: #eaeaea;
+  font-family: "Works Sans", sans-serif;
+  font-size: 20px;
+  padding: 10px 24px;
+  border-radius: 3px;
+  box-shadow: 0px 5px 21px -7px black;
+  border: none;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,0 +1,28 @@
+.boxmodel-wrapper {
+  border: 1px dotted #00013e;
+  padding: 10px;
+  width: 100%;
+}
+
+.boxmodel {
+  width: 100%;
+  padding: 40px;
+  background-color: #1e90ff82;
+  height: 150px;
+  transition: 0.5s all ease;
+}
+
+.box-content {
+  box-sizing: content-box;
+}
+
+.box-border {
+  box-sizing: border-box;
+}
+
+.boxmodel-inner-content-box {
+  height: 100%;
+  width: 100%;
+  border: 1px dashed #00013e;
+  background-color: #8080805e;
+}

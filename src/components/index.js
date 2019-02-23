@@ -10,6 +10,7 @@ import SEO from './SEO';
 import Subline from './Subline';
 import Transition from './Transition';
 import Wrapper from './Wrapper';
+import BoxModelToggle from './BoxModelToggle';
 
 export {
   Article,
@@ -23,5 +24,6 @@ export {
   Wrapper,
   Transition,
   Link,
-  Navigation
+  Navigation,
+  BoxModelToggle
 };
