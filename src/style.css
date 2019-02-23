@@ -419,6 +419,8 @@ code {
 
 img {
   max-width: 100%;
+  margin: 0 auto;
+  display: block;
 }
 
 /*# sourceMappingURL=prism-base2tone-lake-dark.css.map */
