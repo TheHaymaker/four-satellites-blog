@@ -11,7 +11,7 @@
     "babel-plugin-styled-components": "^1.10.0",
     "cwebp": "^2.0.3",
     "cwebp-bin": "^5.0.0",
-    "gatsby": "^2.0.91",
+    "gatsby": "^2.13.50",
     "gatsby-mdx": "^0.3.4",
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-layout": "^1.0.11",
