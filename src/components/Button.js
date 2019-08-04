@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Button = styled.button`
   background: ${props => props.theme.colors.primary};
@@ -16,15 +16,12 @@ const Button = styled.button`
     cursor: pointer;
     transform: translateY(-2px);
   }
-  &:focus {
-    outline: none;
-  }
   svg {
     width: 20px;
     height: 20px;
     margin-right: 0.75rem;
     fill: ${props => props.theme.colors.white};
   }
-`
+`;
 
-export default Button
+export default Button;

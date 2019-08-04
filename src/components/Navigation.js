@@ -22,32 +22,40 @@ class Navigation extends Component {
     const activeClass = active ? 'active' : null;
     return (
       <div className="nav-wrapper">
-        <div className={`fixed-nav ${activeClass}`}>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/work">Work</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-        </div>
         <div
           role="button"
           tabIndex={0}
           className={`hamburger ${activeClass}`}
-          onKeyPress={() => {}}
+          onKeyPress={this.handleHamburgerClick}
           onClick={this.handleHamburgerClick}
         >
           <span className="line" />
           <span className="line" />
           <span className="line" />
+        </div>
+        <div className={`fixed-nav ${activeClass || ''}`}>
+          <ul>
+            <li>
+              <Link tabIndex={0} to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link tabIndex={0} to="/about">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link tabIndex={0} to="/work">
+                Work
+              </Link>
+            </li>
+            <li>
+              <Link tabIndex={0} to="/contact">
+                Contact
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     );

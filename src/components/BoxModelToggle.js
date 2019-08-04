@@ -12,6 +12,7 @@ const BoxModelToggle = () => {
         </div>
       </div>
       <button
+        tabIndex={0}
         className="mdx-btn"
         type="submit"
         onClick={() => toggleBoxModelValue(!boxModelValue)}

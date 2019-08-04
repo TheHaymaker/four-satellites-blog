@@ -49,6 +49,7 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Wrapper>
+      <Navigation />
       <Content>
         <SectionTitle>Latest posts</SectionTitle>
         {postEdges.map(post => (
@@ -63,7 +64,6 @@ const IndexPage = ({
           />
         ))}
       </Content>
-      <Navigation />
     </Wrapper>
   </Layout>
 );

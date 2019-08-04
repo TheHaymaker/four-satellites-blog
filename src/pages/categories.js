@@ -14,7 +14,6 @@ const Content = styled.div`
   border-radius: 3px;
   padding: 2rem 4rem;
   background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 3rem 3rem;
   }
@@ -36,6 +35,7 @@ const Category = ({
 }) => (
   <Layout>
     <Wrapper>
+      <Navigation />
       <Helmet title={`Categories | ${config.siteTitle}`} />
       <Content>
         <SectionTitle>Categories</SectionTitle>
@@ -46,7 +46,6 @@ const Category = ({
           </Title>
         ))}
       </Content>
-      <Navigation />
     </Wrapper>
   </Layout>
 );

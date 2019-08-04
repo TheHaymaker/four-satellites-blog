@@ -11,7 +11,6 @@ const Content = styled.div`
   box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
   padding: 2rem 4rem;
   background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 3rem 3rem;
   }
@@ -41,16 +40,11 @@ const Content = styled.div`
 const Contact = () => (
   <Layout>
     <Wrapper>
+      <Navigation />
       <Helmet title={`Contact | ${config.siteTitle}`} />
       <Content>
         <h1>Contact</h1>
-        <form
-          name="contact-form"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          action="/success"
-        >
+        <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
           <p>
             <label htmlFor="contact-name">
               Name
@@ -68,12 +62,11 @@ const Contact = () => (
             </label>
           </p>
           <p>
-            <Button>Send</Button>
+            <Button tabIndex={0}>Send</Button>
           </p>
           <input type="hidden" name="form-name" value="contact-form" />
         </form>
       </Content>
-      <Navigation />
     </Wrapper>
   </Layout>
 );

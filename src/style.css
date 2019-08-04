@@ -372,7 +372,7 @@ footer .title-special:after {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  z-index: 999;
+  z-index: 9999;
   pointer-events: none;
   opacity: 0;
 }
@@ -465,12 +465,14 @@ button.mdx-btn {
     pointer-events: none;
     transition: 0s left ease, 0.25s opacity ease-in-out;
     width: 100%;
+    display: none;
   }
 
   .fixed-nav.active {
     left: 0px;
     opacity: 1;
     pointer-events: all;
+    display: flex;
   }
   .fixed-nav ul li a {
     writing-mode: rl-tb;

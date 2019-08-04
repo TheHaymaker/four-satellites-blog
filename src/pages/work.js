@@ -43,12 +43,12 @@ const Hero = styled.div`
 const Work = () => (
   <Layout>
     <Wrapper>
+      <Navigation />
       <Hero>
         <h2>Work</h2>
         <p>Coming soon.</p>
       </Hero>
       {/* <Content /> */}
-      <Navigation />
     </Wrapper>
   </Layout>
 );

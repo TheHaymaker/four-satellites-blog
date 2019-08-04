@@ -15,7 +15,6 @@ const Content = styled.article`
   border-radius: 3px;
   padding: 2rem 4.5rem;
   background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 3rem 3rem;
   }
@@ -55,6 +54,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
   return (
     <Layout customSEO>
       <Wrapper>
+        <Navigation />
         <SEO postPath={slug} postNode={postNode} article />
         <Content>
           <Title>{post.title}</Title>
@@ -72,7 +72,6 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
           </PostContent>
           <PrevNext prev={prev} next={next} />
         </Content>
-        <Navigation />
       </Wrapper>
     </Layout>
   );

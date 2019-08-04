@@ -78,9 +78,6 @@ const GlobalStyle = createGlobalStyle`
       color: inherit;
       text-decoration: none;
     }
-    &:focus {
-      outline: 0;
-    }
   }
   h1, h2, h3, h4, h5, h6 {
     color: ${props => props.theme.colors.grey.dark};
@@ -115,9 +112,6 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     background: rgba(0, 0, 0, 0.05);
     padding: .4rem 1rem;
-    &:focus {
-      outline: none;
-    }
   }
   pre {
     margin-top: 0;

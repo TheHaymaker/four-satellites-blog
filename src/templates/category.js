@@ -4,16 +4,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import config from '../../config';
-import {
-  Article,
-  Header,
-  Layout,
-  Link,
-  Navigation,
-  SectionTitle,
-  Subline,
-  Wrapper
-} from '../components';
+import { Article, Header, Layout, Link, Navigation, SectionTitle, Subline, Wrapper } from '../components';
 import '../style.css';
 
 const Content = styled.div`
@@ -22,7 +13,6 @@ const Content = styled.div`
   border-radius: 3px;
   padding: 2rem 4rem;
   background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 3rem 3rem;
   }
@@ -38,6 +28,7 @@ const Category = ({ pageContext: { category }, data: { allMdx } }) => {
   return (
     <Layout>
       <Wrapper>
+        <Navigation />
         <Helmet title={`Category: ${category} | ${config.siteTitle}`} />
         <Content>
           <SectionTitle>Category &ndash; {category}</SectionTitle>
@@ -56,7 +47,6 @@ const Category = ({ pageContext: { category }, data: { allMdx } }) => {
             />
           ))}
         </Content>
-        <Navigation />
       </Wrapper>
     </Layout>
   );

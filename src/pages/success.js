@@ -14,7 +14,6 @@ const Content = styled.div`
   border-radius: 3px;
   padding: 2rem 4rem;
   background-color: ${props => props.theme.colors.bg};
-  z-index: 9000;
   margin-top: -3rem;
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 3rem 3rem;
@@ -43,6 +42,7 @@ const Content = styled.div`
 const Success = () => (
   <Layout>
     <Wrapper>
+      <Navigation />
       <Helmet title={`Contact | ${config.siteTitle}`} />
       <Header>
         <Link to="/">{config.siteTitle}</Link>
@@ -51,7 +51,6 @@ const Success = () => (
         <h1>Your message was sent!</h1>
         <p>I'll answer your request as quick as possible.</p>
       </Content>
-      <Navigation />
     </Wrapper>
   </Layout>
 );
