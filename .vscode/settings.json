@@ -28,5 +28,9 @@
     "typescript",
     "typescriptreact",
     "yml"
+  ],
+  "cSpell.words": [
+    "Subline",
+    "frontmatter"
   ]
 }

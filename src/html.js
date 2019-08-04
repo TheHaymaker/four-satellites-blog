@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import './style.css';
 
 export default function HTML(props) {
   return (
@@ -9,15 +10,6 @@ export default function HTML(props) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         {props.headComponents}
-        <link
-          href="https://fonts.googleapis.com/css?family=Work+Sans:400|600|Major+Mono+Display|Quattrocento+Sans:400,700"
-          rel="stylesheet"
-        />
-        {/* <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/thehaymaker/four-satellites-blog/static/style.css"
-        /> */}
-        {/* <link rel="stylesheet" href="./style.css" /> */}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
