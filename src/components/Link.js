@@ -7,21 +7,29 @@ const InternalLink = ({ children, ...props }) => {
     window.handlePageTransition();
   };
 
-  const { to } = props;
+  const { to, onClick } = props;
 
   return (
-    <Link to={to} onClick={handleClick}>
+    <Link
+      to={to}
+      onClick={e => {
+        handleClick();
+        onClick(e);
+      }}
+    >
       {children}
     </Link>
   );
 };
 
 InternalLink.defaultProps = {
-  children: []
+  children: [],
+  onClick: () => {}
 };
 
 InternalLink.propTypes = {
   to: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.array])
 };
 

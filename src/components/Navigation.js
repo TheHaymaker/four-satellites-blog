@@ -9,11 +9,18 @@ class Navigation extends Component {
     };
 
     this.handleHamburgerClick = this.handleHamburgerClick.bind(this);
+    this.hideHamburger = this.hideHamburger.bind(this);
   }
 
   handleHamburgerClick(e) {
     this.setState(prevState => ({
       active: !prevState.active
+    }));
+  }
+
+  hideHamburger(e) {
+    this.setState(prevState => ({
+      active: false
     }));
   }
 
@@ -36,22 +43,58 @@ class Navigation extends Component {
         <div className={`fixed-nav ${activeClass || ''}`}>
           <ul>
             <li>
-              <Link tabIndex={0} to="/">
+              <Link
+                onKeyPress={() => {
+                  setTimeout(this.hideHamburger, 600);
+                }}
+                onClick={() => {
+                  setTimeout(this.hideHamburger, 600);
+                }}
+                tabIndex={0}
+                to="/"
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link tabIndex={0} to="/about">
+              <Link
+                onKeyPress={() => {
+                  setTimeout(this.hideHamburger, 600);
+                }}
+                onClick={() => {
+                  setTimeout(this.hideHamburger, 600);
+                }}
+                tabIndex={0}
+                to="/about"
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link tabIndex={0} to="/work">
+              <Link
+                onKeyPress={() => {
+                  setTimeout(this.hideHamburger, 600);
+                }}
+                onClick={() => {
+                  setTimeout(this.hideHamburger, 600);
+                }}
+                tabIndex={0}
+                to="/work"
+              >
                 Work
               </Link>
             </li>
             <li>
-              <Link tabIndex={0} to="/contact">
+              <Link
+                onKeyPress={() => {
+                  setTimeout(this.hideHamburger, 600);
+                }}
+                onClick={() => {
+                  setTimeout(this.hideHamburger, 600);
+                }}
+                tabIndex={0}
+                to="/contact"
+              >
                 Contact
               </Link>
             </li>
