@@ -1,0 +1,208 @@
+---
+date: '2019-12-26'
+title: "'Where did I leave my keys?': Is accessibility the 'Emotional Labor' of tech?"
+categories:
+  - a11y
+  - accessibility
+  - react
+  - gender equality
+---
+
+## TL;DR.
+
+_Some thoughts on the disproportionate majority of women that specialize within the accessibility-space within the disproportionate majority of men in the tech industry_.
+
+Why is it that so many _more_ women have taken up the work of advocating for and building inclusive, accessible design patterns within the technology space at (what seems to me) a sharply disproportionate rate than men?
+
+Has this work been unconsciously relegated in the same way women have been saddled with the emotional labor of the household?
+
+Just as there are (currently) more men than women in tech, I see a similar disparity in the industry – only reversed – with regard to the advocacy of accessibility and accessibility-minded solutions.
+
+That's a curiosity to me, one that I explore below.
+
+---
+
+> **Disclaimer**:
+
+> _There are subtle yet significant points of view regarding emotional
+> labor, representation in tech and gender inequality that exist but that
+> are not represented below. While I try, I have my own blind spots and
+> filling the gaps in my own education is an ongoing process. My
+> intention is not to speak for anyone but myself. This is a nuanced
+> thing, and I do not claim any expertise or speak for any other POV
+> other than my own, limited as it is._
+
+---
+
+## The caregivers
+
+My father – a life-long blue collar electrician – now lives on disability due to severe nerve damage in his legs and hands (a side-effect of diabetes and subsequent, self-inflicted maltreatment of said diabetes).
+
+As a result of this nerve damage, he can't feel where his legs terminate. He can't feel his feet touch the ground as he takes a step forward. He can't feel the muscles in his foot contract to catch his balance on an uneven surface. Soon, he will likely not have legs at all and be in a wheelchair full-time.
+
+Movement – daily, everyday movement - is a huge hurdle for him.
+
+This article is not about my father – nor is it about his disability. Rather, it is the result that the indirect experience of his disability had on altering my point of view as an engineer with regard to accessibility.
+
+> Before my father's illness, I was arrogant, flippantly and eagerly dismissive - with an unfounded and unexplainable animus, even - toward web accessibility.
+
+What troubles me now is - when looking back at when I first started my development journey - the attitude and position I held toward accessibility. Before my father's illness, I was arrogant, flippantly and eagerly dismissive - with an unfounded and unexplainable animus, even - toward web accessibility. It did not, and does not, make any sense, and it is something I try to unpack below. But I fear that my initial experience, while wildly offputting, is not an exception but a rule.
+
+Now helping my father walk up a flight of stairs, I find myself feeling either gratitude or frustration if a handrail is installed to accompany the stairs.
+
+Helping him walk on the sidewalk, I find myself feeling either gratitude or frustration if a curb ramp is installed at the crosswalk.
+
+Helping him walk into a building, I find myself feeling either gratitude or frustration if an accessible door is installed.
+
+As I help him walk, I find myself scanning my surroundings for clues and cues that were designed and built for him – _a person with a disability_. Cues that I have never cared about or scanned for before, yet they enhance and ease access to the world tremendously when they exist.
+
+Accessibility features enhance the world not just for _someone with a disability_ (whether or not that disability is permanent, temporary or contextual) but also for the _primary caregiver_ of that person (in this case, my mother), and the _secondary_ and _tertiary caregivers_ (my sister, my niece, me), and the _temporary, contextual caregivers_ (cousins, uncles, bus boys, and waiters/waitresses, doctor office admins, etc). That is the lesson: while not me _yet_, it could very well be me _in the future_ whether I am the caregiver or the person with a disability.
+
+All of this is to say: We take for granted the features that have been considered, designed for, engineered, manufactured, mandated by law, allocated for, purchased, installed – features that are "baked-in" (in many respects) to the structures and edifices of our lives – features that enhance your experience regardless of disability.
+
+Just think of the "Wheelchair" button that activates an automated door. Have you ever hit that button with your elbow because your hands were full?
+
+**I have!**
+
+And as a developer who builds interfaces for the web, I realize what little work and thought so many products do in this space, how far we have yet to come, and the opportunity we have before us to make the platform of the web more inclusive to folks experiencing one, or a variety, of the striations of "disability".
+
+> It wasn't until 1990, with the passing of the Americans with Disabilities Act, that the wheelchair ramp became a staple in urban designs in both private and public applications, e.g. the sidewalk curb ramp that has since become a bygone 'user expectation' for sidewalks everywhere.
+
+The fact that a sidewalk wheelchair ramp was prioritized and installed for a wheelchair user (probably out of fear of litigation, compliance with the ADA federal mandate, or both), the wheelchair user benefits, yes, but so, too, does the mother taking her child to school on a bike when that mother seeks refuge on the sidewalk from a busy or dangerous street.
+
+All users benefit because "disability" is contextual.
+
+## What's my stake in this game?
+
+Within the last six months, I personally championed the implementation of accessibility features within a suite of apps at work. I wanted to ensure we were as thoroughly compliant as we could be from a keyboard navigation/focus management perspective as well as and from a screen reader POV (JAWS, NVDA, etc).
+
+Initially, I implemented some linting tools that threw errors before runtime and would provide useful messages to developers to ensure best practices were utilized. I thought this was a sensible, low-commitment thing: a tool that teaches best practices as it corrects them.
+
+However, I noticed a few Pull Requests later that one of my team members pulled out these contributions, and pulled them out as part of a PR that was unrelated to accessibility – so the removal was quiet, not obvious.
+
+The logic was: this tool produces linting errors that are annoying, and no stakeholder has told us that this is a something we need to support.
+
+I don't think my team member was ill-intentioned, either. Developers have a lot to do and consider, and this does add another layer to that cake.
+
+I pushed back, voiced my strong belief in the importance of accessibility as a _must-have_, much like designing for mobile and building responsive layouts is now considered baseline.
+
+My concerns were heard with patience and understanding but ultimately dismissed. So I acquiesced. I acquiesced for the sake of social cohesion; to maintain a positive perception of myself on the team.
+
+I think about this when I hear `emotional labor`. While I think men and women alike have pressure to coalesce around social norms and expectations, I think women get this pressure from a thousand and one more angles than men - so ultimately the cumulative pressure ends up so much greater. If you are reading this, and you are a woman, this situation probably happens to you every single day of your life - probably multiple times a day.
+
+I also acquiesced because my teammate has seniority on me at the company. I backed off the issue despite it being very near and dear to my heart.
+
+Months went by and our work continued as normal.
+
+About one month before our go-live date, we got a top-down directive that our applications needed to be ADA compliant according to an internal guide that had not been shared up until that point.
+
+So in addition to the new features, we now needed to go back and refactor multiple code bases to correct all of the errors that were identifiable. From the tooling, auditing, writing tests, etc, we identified about 50 "high-priority" violations pre-runtime; about 10 color contrast issues using a runtime audit tool (and we knew we missed some issues since this tool only runs at the initial time of the applicating rendering), and a slew of keyboard/focus management/screen reader issues that we discovered by manually auditing our applications. We were able to directly address all but a few low-priority issues that were caused by open-source project dependencies, of which have since been addressed in subsequent releases.
+
+Not surprisingly, auditing the accessibility of our applications and correcting those issues led us to build a better-engineered product for everyone. The auditing process uncovered, in addition to accessibility issues, a few other issues that forced us to change how we modeled some state management pieces as well as some UI designs, too, further enhancing the application.
+
+> Not surprisingly, auditing the accessibility of our applications ... led us to build a better-engineered product for everyone.
+
+However, had we conducted this work from the start, I believe we would have avoided the following:
+
+- The accessibility work fell disproportionately on a single team member, instead of being shared across the entire team.
+- The best-practice learnings then, as a result, were consolidated within a single team member.
+- What was a significant amount of work all at once could have been solved and addressed over time as those issues arose during active development sprints.
+- We missed an opportunity to onboard and teach junior team members about the tooling and ecosystem that surrounds accessibility, as well as how to address common patterns and utilize the tooling to their advantage.
+- We spend time addressing missed accessibility best-practices in Pull Request reviews, and there's more extraneous back-and-forth before features are merged to the development branch.
+
+However, these things were not what caused me the ask the question: "Is accessibility the 'Emotional Labor' of tech?"
+
+What caused me to ask the question was how _quickly_, _casually_, and, perhaps most of all, how _easily_ my personal efforts to incorporate accessibility into my professional work were stopped, and how quickly the discussion of any effort to support accessibility fell silent thereafter.
+
+Again - I don't think anyone had any ill-will whatsoever, either. I also think that I could have spoken up more about it. Pushed harder for my point of view. And maybe it would have changed things. Maybe it would have soiled my good social relationships with my teammates. I don't know.
+
+What I do know is: this was my experience as a man. A white, cisgender man with a Master's Degree and a senior engineer status within a team. I can only imagine - and I have - what it might be like for a woman in this industry.
+
+If it had not been for the top-down, organizational mandate in support of web accessibility – we would have shipped a suite of applications that were pocked with compliance issues. And those applications would have been frustrating – impossible even – to operate if a user had any form of a disability that prevented them from using a point-and-click mouse.
+
+How we - as a group - get to this point is simple: some arguments are not perceived as a priority. In my case, it wasn't that I or my argument was dismissed – my argument was missed.
+
+It was missed in part because – at that moment – nobody on my team except me (as far as I know) had a personal connection to disability.
+
+Also, no one on my team had any indication or signal from the institution that they would receive any form of prestige, power or social collateral in exchange for working on accessibility features.
+
+Of course, that changed when my team was informed that accessibility was a requirement.
+
+After that, implementing accessibility shifted from _unprestigious chore_ to _prestigious feature_. It shifted from, _My boss doesn't give a shit about this_, to _This could help me get my bonus if I help get this done_. And that difference, while subtle, is everything. Instead of asking people to be saints or martyrs, you're asking them to be the capitalist workers that they have to be to live in the world.
+
+Again, emotional labor comes to mind. It's important. Essential. Ubiquitous. Completely missed until it impacts you personally.
+
+And so much more of that work falls on women than it does men…
+
+## The Nag
+
+In my personal experience, if accessibility isn't already a top-level priority at the organization, the conversation advocating for accessibility often goes one of the following ways:
+
+- "We don't have the budget to support that right now."
+- "We hear you and we agree, but right now the business needs us to focus on getting x and y out the door. We can revisit that in Q4."
+- "None of our users are disabled. So this doesn't make sense for us."
+- "Our users have never asked us for that. Why would we give our users something they aren't asking us for?"
+- "All of our apps are internal facing, so ADA doesn't apply. We don't need to support accessibility."
+
+These conversations can be hard, and it can feel like – if you are the one who is advocating for greater focus on accessibility work – others perceive you as a **nag**.
+
+---
+
+> I am borrowing that word - _nag_ - specifically because it is so often directed at women, and it is used to disregard the concerns of – most often – women when they press for details that – most often – men deem unimportant. I am guilty of this in my own marriage, and I do not intend on pretending that I am innocent or absolved from this. I have done it both at home and work, and I've done it to both women and men for things that I didn't agree with as priorities. Right or wrong, justified or not, I have done it.
+>
+> I want to say this because – just as with accessibility features in our applications – our work is never completely done. It exists on a sliding scale. There is always something that we can improve and do better on, and for me, this was and is one of them.
+
+---
+
+This is what I suspect is happening: by advocating for accessibility you are also advocating for more work for the team; work that is nuanced and specialized. The work of implementing accessibility features might require significant refactoring, might require more development time, or the addition of specialized tooling to support those features. All of that does come with an intellectual burden – a burden that is not insignificant and is shared and distributed across the team.
+
+So I get it: I understand why team members, managers, business owners, etc. push back and resist when it comes to accessibility. Especially when the mindset is – be it for good or bad – 'move fast and break things', which has become both a mantra and a myth in tech.
+
+However, I also believe that – if the Engineering Manager, for instance, was colorblind, supporting proper color contrast throughout the application would magically become a priority. Which is to say that having a personal connection to a disability drastically changes how you assess and vet what is a priority and what is not a priority.
+
+The same way that a man (that is totally not me _cough, cough_) might prioritize dusting off bookshelves more so if that man had an allergy that was triggered by the presence of dust. But for the person that is not affected personally by dust (staying within the realm of this household example) the act of dusting goes on mostly taken for granted and unseen _just as the wheelchair ramp_, until a personal connection causes you to scan and re-prioritize your surroundings and how they have or have not been constructed.
+
+In short, I owe my wife an apology, because she dusts all of the things. Dusting is not a priority to me. However, I still benefit from a dusted, well-kept home. There is a hard lesson for men to learn in this, one that extends from the home to the office to the board room.
+
+Why, then, is it that so many more women are having conversations about accessibility than there are men? Or - at least - why does it feel like there are more women than men having those conversations?
+
+And why is it that within organizations that _do_ support accessibility, so often it is women who occupy the roles that are responsible for championing accessibility across the organization? (This is my assumption, and I recognize that my personal bias is at work here in making this assumption.)
+
+#### Is accessibility work the 'Emotional Labor' of tech? I am afraid that it is.
+
+At least that's how it is looking to me from where I am standing.
+
+I think, at least, that even as a half-truth, there's still enough truth in that statement to garner attention and have us at least take a hard look at the why and how.
+
+## It all comes back to power? I think so.
+
+I have a theory for why this disparity exists. My working hypothesis goes something like this:
+
+1. Men are drawn to power and prestige.
+2. Tech jobs are associated with a level of power and prestige (via salary).
+3. Men are drawn to tech because they are drawn to power and prestige.
+4. Power and prestige within a certain company, product or team can be acquired by focusing on the tasks that have the greatest return on investment with regard to power and prestige (a.k.a. low-hanging fruit; technical tasks that provide large chunks of _seen_ value).
+
+The technical tasks that provide value in smaller chunks - or value that is not as visible, prioritized or acknowledged by the institutional machinery governing that team, organization or product – are avoided as such and displaced onto others, be it junior team members and/or – yes – women. In many instances, accessibility work falls into this category. (Although I'm not prepared to wade into this culture war, I think one could argue that in certain organizations or certain teams, CSS/styling and design work also fall into this category).
+
+So here, I find myself with the conclusion that one reason so few men, when compared to the number of women, gravitate toward accessibility is because that work does not generate the same amount of power and prestige within the greater machinery as other technical tasks might, and as a result of that accessibility work is relegated to women, who have been straddled and relegated with the other forms of "unprestigious" labor (emotional labor) as it is.
+
+I am not saying that there are no men doing this work. There are. What I am saying is that there are not nearly enough men doing this work to the degree that women are doing this work.
+
+I am not saying that accessibility needs to be co-opted from women, either – that is not the intention of this article.
+
+I think what I am saying – what I am posing as, perhaps, an invitation to the community – is for this dynamic to be a part of the larger conversation of gender inequality, both in tech and at home. I think this is a cultural blind spot for many us – myself included here – and I think we still have plenty more to learn and work through and refactor.
+
+Women have – as they have always done throughout history – made the most of it. From where I am standing, women have owned the Accessibility Issue, driving difficult conversations with stakeholders at all levels of organizations, speaking at conferences, running workshops, confronting Twitter trolls and sexist old heads alike, bringing accessibility into the mainstream (and consequently, the value that this work provides).
+
+And while many enterprise-level companies have adopted accessibility as a core cultural feature, I know there are hundreds of thousands of companies out there where this work has yet to transition into a business priority. It is at these companies where I know you'll find engineers that have committed themselves quietly in their work to advocate for accessibility on their teams and products – and whose words and voices are drowned out or diluted, their arguments challenged by financial, organizational or audience-related justifications for why _disability is not a priority_.
+
+What I think I'm saying is – in lieu of a 1990 ADA equivalent – as men, we cannot continue to leave this work to women and women alone. And as I see it – too much of the burden is being relegated to the backs of women. And I think that this dynamic has very real, career-impacting implications for a woman in this industry. We need to step up.
+
+We need to be better advocates not just for the women in our lives, but the women on our teams, and the issues and priorities that are advanced by those women.
+
+Yes, this is partly about advocating, about standing arm-in-arm. Accessibility is the contextual subject that we have grounded this conversation in. But it could just as easily be _equal pay_. It could just as easily be _maternity/paternity policies_. There's plenty more we can learn by shedding light on the things that we have subconsciously relegated to the pile of "_doesn't apply to me_".
+
+This is not just about championing accessibility; this is also about _the other thing_. This is also about championing the space, the opportunity and the encouragement for women to work on, and own, the technical tasks that men seem to still have a monopoly on: _the technical tasks that come with the big wins that lead to raises, promotions and bonuses_.
+
+In short, we need to own our slice of emotional labor, too. The things we build and the people we build them for – be it at a home base or a codebase – will benefit.
