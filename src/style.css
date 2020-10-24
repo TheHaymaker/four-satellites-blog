@@ -172,8 +172,8 @@ strong {
   font-family: 'Major Mono Display', monospace;
   font-size: 25px;
   margin-top: 0px;
-  margin-bottom: 40px;
   display: inline-block;
+  color: #f5f5f5;
 }
 
 .title-special {
@@ -218,7 +218,7 @@ nav {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: linear-gradient(to top, transparent, #ffcfcf);
+  background: linear-gradient(to top, transparent, #f1f1f1);
 }
 
 .logo {
@@ -294,9 +294,13 @@ nav {
 .fixed-nav {
   position: fixed;
   top: 5px;
-  left: 5px;
+  left: 0px;
   text-align: right;
   z-index: 999;
+  background: rgb(243, 243, 243);
+  box-shadow: -5px 0px 13px -5px rgb(22, 22, 22);
+  padding-left: 5px;
+  border-radius: 0px 10px 10px 0px;
 }
 
 .fixed-nav ul {
@@ -351,6 +355,7 @@ footer {
   text-align: center;
   padding: 3rem 1rem;
   font-size: 0.8rem;
+  color: #667a8d;
 }
 
 footer > span {
@@ -385,15 +390,18 @@ footer .title-special:after {
   position: fixed;
   top: 0;
   left: 0;
-  width: 50px;
-  height: 50px;
-  padding: 12px;
+  width: 40px;
+  height: 40px;
+  padding: 11px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   z-index: 9999;
   pointer-events: none;
   opacity: 0;
+  background-color: #f5f5f5;
+  box-shadow: 0px 5px 8px -6px;
+  border-radius: 3px;
 }
 
 .hamburger,

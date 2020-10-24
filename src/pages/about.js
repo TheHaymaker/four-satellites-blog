@@ -8,6 +8,7 @@ const Content = styled.div`
   box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   padding: 3rem 6rem;
+  background-color: #f3f3f3;
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 3rem 2rem;
   }
@@ -23,7 +24,6 @@ const Hero = styled.div`
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   text-align: center;
   color: ${props => props.theme.colors.grey.dark};
-
   @media (max-width: ${props => props.theme.breakpoints.phone}) {
     padding: 2rem 1rem 4rem 1rem;
   }
@@ -45,7 +45,14 @@ const About = () => (
     <Wrapper>
       <Navigation />
       <Hero>
-        <h2>About</h2>
+        <h2
+          style={{
+            fontFamily: "'Major Mono Display', monospace",
+            color: '#f5f5f5'
+          }}
+        >
+          About
+        </h2>
       </Hero>
       <Content>
         <h2>Hi. 😍</h2>

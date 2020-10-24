@@ -4,7 +4,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import config from '../../config';
-import { Article, Header, Layout, Link, Navigation, SectionTitle, Subline, Wrapper } from '../components';
+import { Article, Layout, Link, Navigation, SectionTitle, Subline, Wrapper } from '../components';
 import '../style.css';
 
 const Content = styled.div`
@@ -12,7 +12,7 @@ const Content = styled.div`
   box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   padding: 2rem 4rem;
-  background-color: ${props => props.theme.colors.bg};
+  background-color: #f3f3f3;
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 3rem 3rem;
   }

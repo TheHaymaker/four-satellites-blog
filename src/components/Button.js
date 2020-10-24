@@ -11,6 +11,7 @@ const Button = styled.button`
   padding: ${props => (props.big ? '0.5rem 1.75rem' : '0.35rem 1.65rem')};
   transition: all ${props => props.theme.transitions.normal};
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-family: 'Work Sans', sans-serif;
   &:hover {
     background: ${props => props.theme.colors.primaryLight};
     cursor: pointer;

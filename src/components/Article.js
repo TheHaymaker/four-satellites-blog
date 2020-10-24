@@ -10,7 +10,10 @@ const Post = styled.article`
   flex-direction: column;
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
-
+  background-color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 4px;
+  box-shadow: 0px 9px 30px -21px;
   @media (max-width: ${props => props.theme.breakpoints.phone}) {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -35,25 +38,23 @@ const Excerpt = styled.p`
   margin-bottom: 1rem;
 `;
 
-const Article = ({ title, date, excerpt, slug, timeToRead, categories }) => {
-  return (
-    <Post>
-      <Title>
-        <Link to={slug}>{title}</Link>
-      </Title>
-      <Subline>
-        {date} &mdash; {timeToRead} Min Read &mdash; In{' '}
-        {categories.map((cat, i) => (
-          <React.Fragment key={cat}>
-            {!!i && ', '}
-            <Link to={`/categories/${kebabCase(cat)}`}>{cat}</Link>
-          </React.Fragment>
-        ))}
-      </Subline>
-      <Excerpt>{excerpt}</Excerpt>
-    </Post>
-  );
-};
+const Article = ({ title, date, excerpt, slug, timeToRead, categories }) => (
+  <Post>
+    <Title>
+      <Link to={slug}>{title}</Link>
+    </Title>
+    <Subline>
+      {date} &mdash; {timeToRead} Min Read &mdash; In{' '}
+      {categories.map((cat, i) => (
+        <React.Fragment key={cat}>
+          {!!i && ', '}
+          <Link to={`/categories/${kebabCase(cat)}`}>{cat}</Link>
+        </React.Fragment>
+      ))}
+    </Subline>
+    <Excerpt>{excerpt}</Excerpt>
+  </Post>
+);
 
 export default Article;
 
